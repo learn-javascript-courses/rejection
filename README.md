@@ -8,10 +8,10 @@ The game has one rule:
 
 Ask for things outside your comfort zone, and you'll find yourself winning a lot more.
 
-Win = 10 points.
-Rejection = 1000 points.
+Win = 1 point.
+Rejection = 10 points.
 
-If you have wins and rejections on the same day, your wins points are multiplied by 10.
+If you have wins and rejections on the same day, your `win` points are multiplied by 10.
 
 How long can you make your rejection streak last?
 
