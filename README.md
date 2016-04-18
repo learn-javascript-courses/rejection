@@ -2,6 +2,13 @@
 
 You gotta lose to win.
 
+Train yourself to:
+
+* Get a raise
+* Sell more
+* Develop more business
+* Negotiate better deals
+
 The game has one rule:
 
 **You must be rejected by a human being at least once per day.**
