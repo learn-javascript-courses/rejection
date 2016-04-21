@@ -1,5 +1,9 @@
 # Rejection
 
+A student project for [Learn JavaScript with Eric Elliott](https://ericelliottjs.com).
+
+Want to work as a team? Find a coding buddy in the [student chat](https://gitter.im/learn-javascript-courses/javascript-questions).
+
 You gotta lose to win.
 
 Train yourself to:
