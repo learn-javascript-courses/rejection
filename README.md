@@ -54,7 +54,7 @@ Add mobile apps
 ## To Implement:
 
 1. Fork this repo
-2. Implement your rejection game.
+2. Implement your solution.
 3. Open an issue with a link to your fork.
 
 To get credit, you must [open an issue](https://github.com/learn-javascript-courses/rejection/issues/new?title=Challenge+completed+level:+basic/mid/advanced) with a link to your fork.
