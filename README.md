@@ -29,16 +29,16 @@ How long can you make your rejection streak last?
 
 ## Basic Level
 
-Build a UI that lets you keep track of your score. Include a text input for the ask, who you asked, and two buttons: "Accepted" or "rejected".
+Build a UI that lets you keep track of your score. Include a text input for the ask, who you asked, and two buttons: "Accepted" or "Rejected". For asynchronous requests such as emails or messages, record the score at the time you get the answer, not at the time you ask.
 
 Use HTML+CSS and store a record of the data in `localStorage`.
 
-Keep a running tally of the user's current score. Remember that the day's score needs to be recalculated each time an ask is accepted or rejected.
+Keep a running tally of the user's current score. Remember that the day's subtotal needs to be recalculated each time an ask is accepted or rejected, so it will be useful to keep the list in an array that you can [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) with each new answer.
 
 
 ## Mid level
 
-Add an API to store data using a web service and database. Hint: Redis or Mongo would be good candidates.
+Add an API to store data using a web service and database. Track multiple users (which means you'll need to add user authentication). Hint: Redis, Mongo, or RethinkDB would be good database candidates. Social login such as Facebook or Twitter would be good login options (easier and more secure than username/password logins).
 
 
 ## Advanced level
