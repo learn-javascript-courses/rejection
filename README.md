@@ -43,12 +43,12 @@ Add an API to store data using a web service and database. Track multiple users 
 
 ## Advanced level
 
-Share your score and compete with your friends on Facebook.
-
+* Share your score and compete with your friends on Facebook.
+* For each user, keep a leaderboard from their circle of friends.
 
 ## Extra credit
 
-Add mobile apps
+* Add mobile apps
 
 
 ## To Implement:
