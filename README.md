@@ -38,6 +38,7 @@ Your data structure can be a simple array of ask objects:
 ```js
 interface Ask {
   timestamp: Number,   // output from Date.now()
+  ask: String,         // the ask
   askee: String,       // person asked
   description: String, // description of the ask
   status: String       // 'Accepted' or 'Rejected'
