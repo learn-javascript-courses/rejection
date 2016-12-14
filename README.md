@@ -59,7 +59,7 @@ Add an API to store data using a web service and database. Track multiple users 
 
 ## Extra credit
 
-* Add mobile apps
+* Add mobile apps by turning your web app into a [Progressive Web Application](https://medium.com/javascript-scene/why-native-apps-really-are-doomed-native-apps-are-doomed-pt-2-e035b43170e9).
 
 
 ## To Implement:
