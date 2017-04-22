@@ -17,7 +17,7 @@ The game has one rule:
 
 **You must be rejected by a human being at least once per day.**
 
-Ask for things outside your comfort zone, and you'll find yourself winning a lot more.
+Ask for things outside your comfort zone, and you'll find yourself winning a lot [more](#misc).
 
 Win = 1 point.
 Rejection = 10 points.
@@ -69,3 +69,6 @@ Add an API to store data using a web service and database. Track multiple users 
 3. Open an issue with a link to your fork.
 
 To get credit, you must [open an issue](https://github.com/learn-javascript-courses/rejection/issues/new?title=Challenge+completed+level:+basic/mid/advanced) with a link to your fork.
+
+## Misc
+* Watch the TED talk "[What I learned from 100 days of rejection](https://www.ted.com/talks/jia_jiang_what_i_learned_from_100_days_of_rejection)"
