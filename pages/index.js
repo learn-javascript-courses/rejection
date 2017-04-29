@@ -8,12 +8,10 @@ import Head from '../components/Head';
 
 const Index = (props) => {
   return (
-    <Provider store={store()}>
       <div>
        <Head />
          <Main />
        </div>
-    </Provider>
   );
 }
 

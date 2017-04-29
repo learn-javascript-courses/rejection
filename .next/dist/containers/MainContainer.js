@@ -52,6 +52,7 @@ var Main = function (_Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (Main.__proto__ || (0, _getPrototypeOf2.default)(Main)).call(this));
 
     _this.handleSubmit = _this.handleSubmit.bind(_this);
+    _this.handleAnswer = _this.handleAnswer.bind(_this);
     return _this;
   }
 
@@ -59,29 +60,71 @@ var Main = function (_Component) {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
       e.preventDefault();
-      console.log(this.props.list);
       this.props.add({
         ask: '20 dollars please',
         asked: 'Mom'
       });
     }
   }, {
+    key: 'handleAnswer',
+    value: function handleAnswer(event, answer) {
+      event.preventDefault();
+      answer === Actions.rejected ? this.props.rejected() : this.props.accepted();
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
+      console.log(Actions.rejected());
+      var _props = this.props,
+          list = _props.list,
+          rejected = _props.rejected,
+          points = _props.points,
+          accepted = _props.accepted;
+
       return _react2.default.createElement('div', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 28
         }
       }, _react2.default.createElement('input', { type: 'text', __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 29
         }
       }), _react2.default.createElement('input', { type: 'submit', onClick: this.handleSubmit, __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 30
         }
-      }));
+      }), _react2.default.createElement('ul', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31
+        }
+      }, list.map(function (ask, index) {
+        return _react2.default.createElement('li', { key: index + ask.ask, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 33
+          }
+        }, ask.ask, ' | ', ask.asked, _react2.default.createElement('input', { type: 'submit', value: 'Rejected', onClick: function onClick(e) {
+            return _this2.handleAnswer(e, Actions.rejected);
+          }, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35
+          }
+        }), _react2.default.createElement('input', { type: 'submit', value: 'Accepted', onClick: function onClick(e) {
+            return _this2.handleAnswer(e, Actions.accepted);
+          }, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36
+          }
+        }));
+      })), _react2.default.createElement('div', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40
+        }
+      }, points));
     }
   }]);
 
@@ -89,9 +132,7 @@ var Main = function (_Component) {
 }(_react.Component);
 
 var mapStateToProps = function mapStateToProps(state) {
-  return {
-    list: state.list
-  };
+  return state;
 };
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return (0, _redux.bindActionCreators)(Actions, dispatch);

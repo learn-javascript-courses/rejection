@@ -21,10 +21,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _handleActions;
 
 var initialState = 0;
-exports.default = (0, _reduxActions.handleActions)((_handleActions = {}, (0, _defineProperty3.default)(_handleActions, Actions.Rejected, function (state, _ref) {
+exports.default = (0, _reduxActions.handleActions)((_handleActions = {}, (0, _defineProperty3.default)(_handleActions, Actions.REJECTED, function (state, _ref) {
   var payload = _ref.payload;
-  return points + 10;
-}), (0, _defineProperty3.default)(_handleActions, Actions.Accepted, function (state, _ref2) {
+
+  console.log(state);
+  var total = state + 10;
+  return total;
+}), (0, _defineProperty3.default)(_handleActions, Actions.ACCEPTED, function (state, _ref2) {
   var payload = _ref2.payload;
-  return points + 1;
+
+  var total = state + 1;
+  return total;
 }), _handleActions), initialState);

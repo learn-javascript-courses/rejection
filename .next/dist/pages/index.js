@@ -32,26 +32,22 @@ var _jsxFileName = '/Users/RyanBas/Documents/web_development/rejection/pages/ind
 
 
 var Index = function Index(props) {
-  return _react2.default.createElement(_reactRedux.Provider, { store: (0, _store2.default)(), __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    }
-  }, _react2.default.createElement('div', {
+  return _react2.default.createElement('div', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 11
     }
   }, _react2.default.createElement(_Head2.default, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 12
     }
   }), _react2.default.createElement(_MainContainer2.default, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 13
     }
-  })));
+  }));
 };
 
 exports.default = (0, _nextReduxWrapper2.default)(_store2.default)(Index);
