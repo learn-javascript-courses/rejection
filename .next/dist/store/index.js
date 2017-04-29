@@ -15,5 +15,5 @@ var _reduxDevtoolsExtension = require('redux-devtools-extension');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = function (initialState) {
-  var store = (0, _redux.createStore)(_reducers2.default, initialState);
+  var store = (0, _redux.createStore)(_reducers2.default, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 };
