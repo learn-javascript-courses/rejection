@@ -6,10 +6,12 @@ export default function List ({ list, handleAnswer }) {
     <ul>
       {list.map((ask, index) => (
         <li key={ask + index}>
-            {ask.person} | {ask.asked}
-          <input type="submit"
-                 value="Rejected"
-                 onClick={e => handleAnswer(e, {answer: Actions.rejected, index})} />
+          {ask.person} | {ask.asked}
+          <input
+            type="submit"
+            value="Rejected"
+            onClick={e => handleAnswer(e, {answer: Actions.rejected, index})}
+          />
           <input type="submit" value="Accepted" onClick={e => handleAnswer(e, { answer: Actions.accepted, index })} />
         </li>
       ))}

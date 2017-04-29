@@ -16,9 +16,10 @@ class Main extends Component {
   }
   handleAnswer(event, {answer, index}) {
     event.preventDefault();
-    const { rejected, accepted, deleteAsk } = this.props.actions
-    answer === Actions.rejected ? rejected() : accepted();
-    deleteAsk(index)
+    const { rejected, accepted, deleteAsk } = this.props.actions;
+    if (answer === Actions.rejected) rejected();
+    else accepted();
+    deleteAsk(index);
 
   }
   render() {
@@ -26,10 +27,10 @@ class Main extends Component {
     return (
       <div>
         <RejectionForm handleSubmit={this.handleSubmit} />
-        <List handleAnswer={this.handleAnswer} list={list} key={Date.now}/>
+        <List handleAnswer={this.handleAnswer} list={list} key={Date.now} />
         <div>Total {points}</div>
       </div>
-    )
+    );
   }
 }
 
@@ -38,9 +39,9 @@ const mapStateToProps = (state) => {
     list: state.list,
     points: state.points,
     form: state.form.RejectionForm
-  }
+  };
 }
-const mapDispatchToProps = (dispatch) => ({actions : bindActionCreators(Actions, dispatch) })
+const mapDispatchToProps = (dispatch) => ({ actions: bindActionCreators(Actions, dispatch) });
 
 const MainContainer = connect(mapStateToProps, mapDispatchToProps)(Main);
 export default MainContainer;

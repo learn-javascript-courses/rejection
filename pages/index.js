@@ -5,14 +5,14 @@ import Main from '../containers/MainContainer';
 import Head from '../components/Head';
 
 
-const Index = (props) => {
+const Index = () => {
   return (
-      <div>
-       <Head />
-         <Main />
-       </div>
+    <div>
+     <Head />
+       <Main />
+     </div>
   );
-}
+};
 
 
 export default withRedux(store)(Index);
