@@ -1,0 +1,45 @@
+{
+  "name": "rejection",
+  "version": "1.0.0",
+  "description": "A student project for [Learn JavaScript with Eric Elliott](https://ericelliottjs.com).",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanbas21/rejection.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanbas21/rejection/issues"
+  },
+  "homepage": "https://github.com/ryanbas21/rejection#readme",
+  "dependencies": {
+    "babel-preset-airbnb": "^2.2.3",
+    "material-ui": "^0.17.4",
+    "next": "^2.3.0-alpha1",
+    "next-redux-wrapper": "^1.1.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "redux-actions": "^2.0.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "redux-devtools-extension": "^2.13.0",
+    "tape": "^4.6.3"
+  }
+}
