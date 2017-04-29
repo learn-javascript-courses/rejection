@@ -1,11 +1,10 @@
 import { handleActions } from 'redux-actions';
-import * as Actions from '../constants/rejection';
+import * as Actions from '../constants/';
 
 const initialState = 0;
 export default handleActions({
 
   [Actions.REJECTED] : (state, { payload }) => {
-    console.log(state)
     const total = state + 10;
     return total;
   },

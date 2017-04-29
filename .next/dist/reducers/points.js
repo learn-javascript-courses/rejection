@@ -10,9 +10,9 @@ var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
 var _reduxActions = require('redux-actions');
 
-var _rejection = require('../constants/rejection');
+var _constants = require('../constants/');
 
-var Actions = _interopRequireWildcard(_rejection);
+var Actions = _interopRequireWildcard(_constants);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -24,7 +24,6 @@ var initialState = 0;
 exports.default = (0, _reduxActions.handleActions)((_handleActions = {}, (0, _defineProperty3.default)(_handleActions, Actions.REJECTED, function (state, _ref) {
   var payload = _ref.payload;
 
-  console.log(state);
   var total = state + 10;
   return total;
 }), (0, _defineProperty3.default)(_handleActions, Actions.ACCEPTED, function (state, _ref2) {

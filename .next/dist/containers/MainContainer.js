@@ -36,6 +36,14 @@ var _actions = require('../actions');
 
 var Actions = _interopRequireWildcard(_actions);
 
+var _List = require('../components/List');
+
+var _List2 = _interopRequireDefault(_List);
+
+var _rejectionForm = require('../components/rejectionForm');
+
+var _rejectionForm2 = _interopRequireDefault(_rejectionForm);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -59,72 +67,53 @@ var Main = function (_Component) {
   (0, _createClass3.default)(Main, [{
     key: 'handleSubmit',
     value: function handleSubmit(e) {
-      e.preventDefault();
-      this.props.add({
-        ask: '20 dollars please',
-        asked: 'Mom'
-      });
+      this.props.actions.add(this.props.form.values);
     }
   }, {
     key: 'handleAnswer',
-    value: function handleAnswer(event, answer) {
+    value: function handleAnswer(event, _ref) {
+      var answer = _ref.answer,
+          index = _ref.index;
+
       event.preventDefault();
-      answer === Actions.rejected ? this.props.rejected() : this.props.accepted();
+      var _props$actions = this.props.actions,
+          rejected = _props$actions.rejected,
+          accepted = _props$actions.accepted,
+          deleteAsk = _props$actions.deleteAsk;
+
+      answer === Actions.rejected ? rejected() : accepted();
+      deleteAsk(index);
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
-      console.log(Actions.rejected());
       var _props = this.props,
           list = _props.list,
           rejected = _props.rejected,
           points = _props.points,
-          accepted = _props.accepted;
+          accepted = _props.accepted,
+          actions = _props.actions,
+          add = _props.add;
 
       return _react2.default.createElement('div', {
         __source: {
           fileName: _jsxFileName,
+          lineNumber: 27
+        }
+      }, _react2.default.createElement(_rejectionForm2.default, { handleSubmit: this.handleSubmit, __source: {
+          fileName: _jsxFileName,
           lineNumber: 28
         }
-      }, _react2.default.createElement('input', { type: 'text', __source: {
+      }), _react2.default.createElement(_List2.default, { handleAnswer: this.handleAnswer, list: list, key: Date.now, __source: {
           fileName: _jsxFileName,
           lineNumber: 29
         }
-      }), _react2.default.createElement('input', { type: 'submit', onClick: this.handleSubmit, __source: {
+      }), _react2.default.createElement('div', {
+        __source: {
           fileName: _jsxFileName,
           lineNumber: 30
         }
-      }), _react2.default.createElement('ul', {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 31
-        }
-      }, list.map(function (ask, index) {
-        return _react2.default.createElement('li', { key: index + ask.ask, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 33
-          }
-        }, ask.ask, ' | ', ask.asked, _react2.default.createElement('input', { type: 'submit', value: 'Rejected', onClick: function onClick(e) {
-            return _this2.handleAnswer(e, Actions.rejected);
-          }, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 35
-          }
-        }), _react2.default.createElement('input', { type: 'submit', value: 'Accepted', onClick: function onClick(e) {
-            return _this2.handleAnswer(e, Actions.accepted);
-          }, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 36
-          }
-        }));
-      })), _react2.default.createElement('div', {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 40
-        }
-      }, points));
+      }, 'Total ', points));
     }
   }]);
 
@@ -132,10 +121,14 @@ var Main = function (_Component) {
 }(_react.Component);
 
 var mapStateToProps = function mapStateToProps(state) {
-  return state;
+  return {
+    list: state.list,
+    points: state.points,
+    form: state.form.RejectionForm
+  };
 };
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return (0, _redux.bindActionCreators)(Actions, dispatch);
+  return { actions: (0, _redux.bindActionCreators)(Actions, dispatch) };
 };
 
 var MainContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Main);

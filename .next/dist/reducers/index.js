@@ -14,9 +14,12 @@ var _list = require('./list');
 
 var _list2 = _interopRequireDefault(_list);
 
+var _reduxForm = require('redux-form');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = (0, _redux.combineReducers)({
   list: _list2.default,
-  points: _points2.default
+  points: _points2.default,
+  form: _reduxForm.reducer
 });

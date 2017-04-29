@@ -1,7 +1,7 @@
 import { createAction } from 'redux-actions';
-import * as Actions from '../constants/rejection';
+import * as Actions from '../constants';
 
-export const add = createAction(Actions.ADD, ask => ask);
+export const add = createAction(Actions.ADD);
 export const rejected = createAction(Actions.REJECTED);
 export const accepted = createAction(Actions.ACCEPTED);
 export const edit = createAction(Actions.EDIT);

@@ -7,15 +7,13 @@ exports.deleteAsk = exports.edit = exports.accepted = exports.rejected = exports
 
 var _reduxActions = require('redux-actions');
 
-var _rejection = require('../constants/rejection');
+var _constants = require('../constants');
 
-var Actions = _interopRequireWildcard(_rejection);
+var Actions = _interopRequireWildcard(_constants);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var add = exports.add = (0, _reduxActions.createAction)(Actions.ADD, function (ask) {
-  return ask;
-});
+var add = exports.add = (0, _reduxActions.createAction)(Actions.ADD);
 var rejected = exports.rejected = (0, _reduxActions.createAction)(Actions.REJECTED);
 var accepted = exports.accepted = (0, _reduxActions.createAction)(Actions.ACCEPTED);
 var edit = exports.edit = (0, _reduxActions.createAction)(Actions.EDIT);

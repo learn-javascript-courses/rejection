@@ -16,8 +16,6 @@ var _store = require('../store');
 
 var _store2 = _interopRequireDefault(_store);
 
-var _reactRedux = require('react-redux');
-
 var _MainContainer = require('../containers/MainContainer');
 
 var _MainContainer2 = _interopRequireDefault(_MainContainer);
@@ -35,17 +33,17 @@ var Index = function Index(props) {
   return _react2.default.createElement('div', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 10
     }
   }, _react2.default.createElement(_Head2.default, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 11
     }
   }), _react2.default.createElement(_MainContainer2.default, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 12
     }
   }));
 };
