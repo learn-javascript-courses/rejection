@@ -28,7 +28,7 @@ var initialState = [];
 
 exports.default = (0, _reduxActions.handleActions)((_handleActions = {}, (0, _defineProperty3.default)(_handleActions, Actions.ADD, function (state, _ref) {
   var payload = _ref.payload;
-  return [].concat((0, _toConsumableArray3.default)(state), (0, _toConsumableArray3.default)(payload));
+  return [].concat((0, _toConsumableArray3.default)(state), [payload]);
 }), (0, _defineProperty3.default)(_handleActions, Actions.deleteAsk, function (state, _ref2) {
   var payload = _ref2.payload;
   return state.filter(function (asks) {
