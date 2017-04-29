@@ -33,13 +33,17 @@ var initialState = [];
 exports.default = (0, _reduxActions.handleActions)((_handleActions = {}, (0, _defineProperty3.default)(_handleActions, Actions.ADD, function (state, _ref) {
   var payload = _ref.payload;
 
-  var request = (0, _assign2.default)(payload, { filter: 'none' });
+  var request = (0, _assign2.default)(payload, {
+    filter: 'none',
+    id: state.reduce(function (maxId, ask) {
+      return Math.max(ask.id, maxId);
+    }, -1) + 1
+  });
   return [].concat((0, _toConsumableArray3.default)(state), [request]);
 }), (0, _defineProperty3.default)(_handleActions, Actions.DELETE, function (state, _ref2) {
   var payload = _ref2.payload;
 
-  console.log('here', state);
   return state.filter(function (asks) {
-    return asks !== payload;
+    return state[payload].id !== asks.id;
   });
 }), _handleActions), initialState);

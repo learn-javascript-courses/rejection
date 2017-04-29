@@ -5,12 +5,14 @@ const initialState = [];
 
 export default handleActions({
   [Actions.ADD] : (state, { payload }) => {
-    const request = Object.assign(payload, {filter: 'none'});
+    const request = Object.assign(payload, {
+      filter: 'none',
+      id: state.reduce((maxId, ask) => Math.max(ask.id, maxId), -1) + 1
+    });
     return [...state, request]
   },
   [Actions.DELETE]: (state, { payload}) => {
-    console.log('here', state);
-    return state.filter(asks => asks !== payload)
+    return state.filter(asks => state[payload].id !== asks.id)
   }
 
 
