@@ -21,18 +21,16 @@
   },
   "homepage": "https://github.com/ryanbas21/rejection#readme",
   "dependencies": {
-    "eslint-formatter-pretty": "^1.1.0",
-    "eslint-plugin-compat": "^1.0.2",
-    "eslint-plugin-promise": "^3.5.0",
+    "moment": "^2.18.1",
     "next": "^2.3.0-alpha1",
     "next-redux-wrapper": "^1.1.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
-    "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.6.0",
     "redux-actions": "^2.0.2",
-    "redux-form": "^6.6.3"
+    "redux-form": "^6.6.3",
+    "semantic-ui-react": "^0.68.2"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -44,8 +42,11 @@
     "babel-register": "^6.24.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
+    "eslint-formatter-pretty": "^1.1.0",
+    "eslint-plugin-compat": "^1.0.2",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^6.10.0",
     "redux-devtools-extension": "^2.13.0",
     "tape": "^4.6.3"

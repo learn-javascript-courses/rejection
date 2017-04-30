@@ -19,6 +19,10 @@ exports.default = function () {
       fileName: _jsxFileName,
       lineNumber: 8
     }
+  }), _react2.default.createElement('link', { rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css', __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    }
   }));
 };
 

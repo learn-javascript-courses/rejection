@@ -1,20 +1,34 @@
 import React from 'react';
 import * as Actions from '../actions';
+import { Button, Card, Segment, Container } from 'semantic-ui-react';
 
 export default function List({ list, handleAnswer }) {
-  return (
-    <ul>
-      {list.map((ask, index) => (
-        <li key={ask.person + ask.asked}>
-          {ask.person} | {ask.asked}
-          <input
-            type="submit"
-            value="Rejected"
-            onClick={e => handleAnswer(e, {value: ask, answer: Actions.rejected, index })}
-          />
-          <input type="submit" value="Accepted" onClick={e => handleAnswer(e, { value: ask, answer: Actions.accepted, index })} />
-        </li>
-      ))}
-    </ul>
-  );
+  return list.length > 0 ? (
+      <Container>
+        <Segment padded>
+        {list.map((ask, index) => (
+          <Card raised={true} centered={true} key={ask.person + ask.name + Date.now()}>
+              <Card.Content>
+                <Card.Header>You Asked : {ask.asked}</Card.Header>
+                <Card.Meta></Card.Meta>
+                <Card.Description>For : {ask.person}</Card.Description>
+              </Card.Content>
+              <Card.Content extra>
+                <Button
+                  basic
+                  color={'red'}
+                  onClick={e => handleAnswer(e, { value: ask, answer: Actions.rejected, index })}
+                >Rejected
+                </Button>
+                <Button
+                  basic
+                  color={'green'}
+                  onClick={e => handleAnswer(e, { value: ask, answer: Actions.accepted, index })}
+                >Accepted</Button>
+              </Card.Content>
+            </Card>
+        ))}
+        </Segment>
+      </Container>
+  ) : <div />
 }

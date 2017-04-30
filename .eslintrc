@@ -28,6 +28,7 @@
     "import/extensions": 0,
     "import/no-unresolved": 2,
     "new-cap": 0,
+    "no-confusing-arrow": 0,
     "no-implicit-coercion": "error",
     "no-mixed-operators": 0,
     "no-plusplus": 0,

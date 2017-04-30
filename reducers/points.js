@@ -12,7 +12,7 @@ export default handleActions({
     const total = state + 1;
     return total;
   },
-  [Actions.CLEAR_SCORE] : (state, { payload }) => 0,
+  [Actions.CLEAR_SCORE]: (state, { payload }) => 0,
 
 
 }, initialState);

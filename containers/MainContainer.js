@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
-import { reset } from 'redux-form';
 import { connect } from 'react-redux';
+import moment from 'moment';
+import { Button, Grid, Segment, Divider , Container, Row} from 'semantic-ui-react';
 import * as Actions from '../actions';
 import List from '../components/List';
 import RejectionForm from '../components/rejectionForm';
 import History from '../components/history';
+
 
 class Main extends Component {
   constructor() {
@@ -22,7 +24,7 @@ class Main extends Component {
     const { rejected, accepted, deleteAsk, addToHistory } = this.props.actions;
     if (answer === Actions.rejected) rejected();
     else accepted();
-    addToHistory({ time: Date.now(), value, answer });
+    addToHistory({ time: moment().format('LLLL'), value, answer });
     deleteAsk(index);
   }
   render() {
@@ -33,22 +35,47 @@ class Main extends Component {
      actions: { addToHistory, clearHistory, deleteFromHistory, clearScore }
     } = this.props;
     return (
-      <div >
-        <h1>{`Rejection Game`}</h1>
-        <RejectionForm className={'main-container'} handleSubmit={this.handleSubmit} />
-        <List handleAnswer={this.handleAnswer} list={list} key={Date.now()} />
-        <History
-          history={history}
-          addToHistory={addToHistory}
-          clearHistory={clearHistory}
-          deleteFromHistory={deleteFromHistory}
-        />
-        <div>Total {points} <input type={'submit'} value={'Clear Score'} onClick={clearScore}/></div>
+      <div>
+        <Container textAlign={'center'}>
+           <h1>{'Rejection Game'}</h1>
+        </Container>
+        <Container textAlign={'center'}>
+          <RejectionForm className={'main-container'} handleSubmit={this.handleSubmit} />
+        </Container>
+        <Grid columns={2}>
+          <Grid.Column>
+          <List handleAnswer={this.handleAnswer} list={list} key={Date.now()} />
+          </Grid.Column>
+          <Grid.Column>
+              <History
+                history={history}
+                addToHistory={addToHistory}
+                clearHistory={clearHistory}
+                deleteFromHistory={deleteFromHistory}
+              />
+          </Grid.Column>
+          <Grid.Row>
+            <Container textAlign={'center'}>
+              <Segment padded>
+                <div>Total {points}
+                  <Button
+                    type={'submit'}
+                    onClick={clearScore}>
+                    {'Clear Score'}
+                  </Button>
+                </div>
+              </Segment>
+            </Container>
+          </Grid.Row>
+        </Grid>
+
       </div>
     );
   }
 }
+const styles = {
 
+}
 const mapStateToProps = (state) => ({
   list: state.list,
   points: state.points,

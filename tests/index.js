@@ -1,5 +1,5 @@
 const test = require('tape');
-const list = require('../reducers/list');
+const { handleActions } = require('redux-actions')
 const points = require('../reducers/points');
 
 

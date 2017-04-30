@@ -1,28 +1,39 @@
 import React from 'react';
 import { Field } from 'redux-form';
+import { Button, Form } from 'semantic-ui-react';
 import FormComponent from './formComponent';
 
-export default function Form(props) {
-  console.log('props', props);
+export default function(props) {
   const { handleSubmit, reset } = props;
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor={'Asked'}>Asked</label>
+    <Form onSubmit={handleSubmit}>
       <Field
         name={'asked'}
         type={'text'}
         component={FormComponent}
       />
-      <label htmlFor={'Asked Who'}>Asked Who</label>
       <Field
         name={'person'}
         type={'text'}
         component={FormComponent}
       />
-      <input type={'button'} value={'submit'} onClick={() => {
-        handleSubmit();
-        return reset('RejectionForm');
-      }}/>
-    </form>
+      <Button.Group>
+        <Button
+          onClick={e => {
+            e.preventDefault();
+            return reset('RejectionForm');
+        }}>Cancel</Button>
+        <Button.Or />
+        <Button
+          positive
+          type={'submit'}
+          onClick={(e) => {
+            e.preventDefault();
+            handleSubmit();
+            return reset('RejectionForm');
+          }}
+        >Submit</Button>
+      </Button.Group>
+    </Form>
   );
 }

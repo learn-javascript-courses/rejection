@@ -1,9 +1,12 @@
 import React from 'react';
-
+import { Form } from 'semantic-ui-react';
 
 export default ({ input, meta: { touched, error }, ...custom }) => (
-  <div>
-    <input type="text" {...input} {...custom} />
-  </div>
+    <Form.Input
+      label={input.name.toUpperCase()}
+      type="text"
+      fluid
+      {...input} {...custom}
+    />
 );
 

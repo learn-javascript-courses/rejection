@@ -1,5 +1,6 @@
 import { handleActions } from 'redux-actions';
 import * as Actions from '../constants';
+
 const initialState = [];
 
 export default handleActions({
@@ -16,4 +17,3 @@ export default handleActions({
   [Actions.CLEAR_HISTORY]: (state, { payload }) => [],
   [Actions.DELETE_FROM_HISTORY]: (state, { payload }) => state.filter((hist) => hist.id !== payload)
 }, initialState);
-

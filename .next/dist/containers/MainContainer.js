@@ -30,9 +30,13 @@ var _react2 = _interopRequireDefault(_react);
 
 var _redux = require('redux');
 
-var _reduxForm = require('redux-form');
-
 var _reactRedux = require('react-redux');
+
+var _moment = require('moment');
+
+var _moment2 = _interopRequireDefault(_moment);
+
+var _semanticUiReact = require('semantic-ui-react');
 
 var _actions = require('../actions');
 
@@ -92,7 +96,7 @@ var Main = function (_Component) {
           addToHistory = _props$actions.addToHistory;
 
       if (answer === Actions.rejected) rejected();else accepted();
-      addToHistory({ time: Date.now(), value: value, answer: answer });
+      addToHistory({ time: (0, _moment2.default)().format('LLLL'), value: value, answer: answer });
       deleteAsk(index);
     }
   }, {
@@ -111,46 +115,84 @@ var Main = function (_Component) {
       return _react2.default.createElement('div', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 38
+        }
+      }, _react2.default.createElement(_semanticUiReact.Container, { textAlign: 'center', __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39
         }
       }, _react2.default.createElement('h1', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 40
         }
-      }, 'Rejection Game'), _react2.default.createElement(_rejectionForm2.default, { className: 'main-container', handleSubmit: this.handleSubmit, __source: {
+      }, 'Rejection Game')), _react2.default.createElement(_semanticUiReact.Container, { textAlign: 'center', __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 42
         }
-      }), _react2.default.createElement(_List2.default, { handleAnswer: this.handleAnswer, list: list, key: Date.now(), __source: {
+      }, _react2.default.createElement(_rejectionForm2.default, { className: 'main-container', handleSubmit: this.handleSubmit, __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 43
         }
-      }), _react2.default.createElement(_history2.default, {
+      })), _react2.default.createElement(_semanticUiReact.Grid, { columns: 2, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45
+        }
+      }, _react2.default.createElement(_semanticUiReact.Grid.Column, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 46
+        }
+      }, _react2.default.createElement(_List2.default, { handleAnswer: this.handleAnswer, list: list, key: Date.now(), __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47
+        }
+      })), _react2.default.createElement(_semanticUiReact.Grid.Column, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49
+        }
+      }, _react2.default.createElement(_history2.default, {
         history: history,
         addToHistory: addToHistory,
         clearHistory: clearHistory,
         deleteFromHistory: deleteFromHistory,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 50
         }
-      }), _react2.default.createElement('div', {
+      })), _react2.default.createElement(_semanticUiReact.Grid.Row, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 57
         }
-      }, 'Total ', points, ' ', _react2.default.createElement('input', { type: 'submit', value: 'Clear Score', onClick: clearScore, __source: {
+      }, _react2.default.createElement(_semanticUiReact.Container, { textAlign: 'center', __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 58
         }
-      })));
+      }, _react2.default.createElement(_semanticUiReact.Segment, { padded: true, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
+        }
+      }, _react2.default.createElement('div', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60
+        }
+      }, 'Total ', points, _react2.default.createElement(_semanticUiReact.Button, {
+        type: 'submit',
+        onClick: clearScore, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 61
+        }
+      }, 'Clear Score')))))));
     }
   }]);
 
   return Main;
 }(_react.Component);
 
+var styles = {};
 var mapStateToProps = function mapStateToProps(state) {
   return {
     list: state.list,
