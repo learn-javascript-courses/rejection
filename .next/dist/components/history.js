@@ -28,14 +28,19 @@ exports.default = function (_ref) {
       fileName: _jsxFileName,
       lineNumber: 11
     }
-  }, _react2.default.createElement(_semanticUiReact.Button, { compact: true, floated: 'right', basic: true, type: 'button', onClick: clearHistory, __source: {
+  }, _react2.default.createElement(_semanticUiReact.Button, {
+    compact: true,
+    floated: 'right',
+    basic: true, type: 'button',
+    onClick: clearHistory,
+    __source: {
       fileName: _jsxFileName,
       lineNumber: 12
     }
   }, 'Clear History'), _react2.default.createElement('br', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 20
     }
   }), history.map(function (item, index) {
     return _react2.default.createElement(_semanticUiReact.Card, {
@@ -44,26 +49,26 @@ exports.default = function (_ref) {
       color: item.result === 'REJECTED' ? 'red' : 'green',
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 22
       }
     }, _react2.default.createElement(_semanticUiReact.Card.Header, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 27
       }
     }, 'You Asked : ', item.asked), _react2.default.createElement(_semanticUiReact.Card.Meta, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 28
       }
     }, ' ', item.time, ' '), _react2.default.createElement(_semanticUiReact.Card.Description, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 29
       }
     }, item.person), _react2.default.createElement(_semanticUiReact.Card.Content, { extra: true, __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 30
       }
     }, item.result), _react2.default.createElement(_semanticUiReact.Button, {
       basic: true,
@@ -74,13 +79,13 @@ exports.default = function (_ref) {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 31
       }
     }, 'Delete From History'));
   }))) : _react2.default.createElement('div', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 44
     }
   });
 };

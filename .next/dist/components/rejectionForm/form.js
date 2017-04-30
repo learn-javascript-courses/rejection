@@ -40,14 +40,15 @@ exports.default = function (props) {
     onClick: function onClick(e) {
       e.preventDefault();
       return reset('RejectionForm');
-    }, __source: {
+    },
+    __source: {
       fileName: _jsxFileName,
       lineNumber: 21
     }
   }, 'Cancel'), _react2.default.createElement(_semanticUiReact.Button.Or, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 28
     }
   }), _react2.default.createElement(_semanticUiReact.Button, {
     positive: true,
@@ -60,7 +61,7 @@ exports.default = function (props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 29
     }
   }, 'Submit')));
 };

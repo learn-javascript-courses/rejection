@@ -181,7 +181,8 @@ var Main = function (_Component) {
         }
       }, 'Total ', points), _react2.default.createElement(_semanticUiReact.Button, {
         type: 'submit',
-        onClick: clearScore, __source: {
+        onClick: clearScore,
+        __source: {
           fileName: _jsxFileName,
           lineNumber: 61
         }
@@ -192,7 +193,6 @@ var Main = function (_Component) {
   return Main;
 }(_react.Component);
 
-var styles = {};
 var mapStateToProps = function mapStateToProps(state) {
   return {
     list: state.list,
