@@ -2,33 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="372e3f31-1e00-4867-9c53-09a255b6cbbf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/containers/styles.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/5.fd08646e996381c656fd.hot-update.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/fd08646e996381c656fd.hot-update.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.eslintcache" afterPath="$PROJECT_DIR$/.eslintcache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.eslintrc" afterPath="$PROJECT_DIR$/.eslintrc" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/0.09f3018af344f7dda758.hot-update.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/0.290719a2830a3b862e55.hot-update.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/0.54caa87bd8116877f9b8.hot-update.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/0.81a6cd191976581dd663.hot-update.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/0.863937ebafacb4f2528e.hot-update.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/0.a663c6d17cace16f89d1.hot-update.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/0.c226007755f9e537dfb3.hot-update.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/5.290719a2830a3b862e55.hot-update.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/5.e594ee528a0b7911d94b.hot-update.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/e594ee528a0b7911d94b.hot-update.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/bundles/pages/index.js" afterPath="$PROJECT_DIR$/.next/bundles/pages/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/commons.js" afterPath="$PROJECT_DIR$/.next/commons.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/components/Head.js" afterPath="$PROJECT_DIR$/.next/dist/components/Head.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/components/List.js" afterPath="$PROJECT_DIR$/.next/dist/components/List.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/components/history.js" afterPath="$PROJECT_DIR$/.next/dist/components/history.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/components/rejectionForm/form.js" afterPath="$PROJECT_DIR$/.next/dist/components/rejectionForm/form.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/components/rejectionForm/formComponent.js" afterPath="$PROJECT_DIR$/.next/dist/components/rejectionForm/formComponent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/components/rejectionForm/index.js" afterPath="$PROJECT_DIR$/.next/dist/components/rejectionForm/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/containers/MainContainer.js" afterPath="$PROJECT_DIR$/.next/dist/containers/MainContainer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/manifest.js" afterPath="$PROJECT_DIR$/.next/manifest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/Head.js" afterPath="$PROJECT_DIR$/components/Head.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/List.js" afterPath="$PROJECT_DIR$/components/List.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/history.js" afterPath="$PROJECT_DIR$/components/history.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/rejectionForm/form.js" afterPath="$PROJECT_DIR$/components/rejectionForm/form.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/rejectionForm/formComponent.js" afterPath="$PROJECT_DIR$/components/rejectionForm/formComponent.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/rejectionForm/index.js" afterPath="$PROJECT_DIR$/components/rejectionForm/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/containers/MainContainer.js" afterPath="$PROJECT_DIR$/containers/MainContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reducers/history.js" afterPath="$PROJECT_DIR$/reducers/history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reducers/points.js" afterPath="$PROJECT_DIR$/reducers/points.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/index.js" afterPath="$PROJECT_DIR$/tests/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yarn.lock" afterPath="$PROJECT_DIR$/yarn.lock" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -46,50 +43,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="history.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="history.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/history.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainContainer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/containers/MainContainer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="54" column="16" lean-forward="false" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
-              <folding>
-                <element signature="n#!!block;n#constructor#0;n#Main#0" expanded="false" />
-                <element signature="n#!!block;n#handleSubmit#0;n#Main#0" expanded="false" />
-                <element signature="n#!!block;n#handleAnswer#0;n#Main#0" expanded="false" />
-                <element signature="e#1231#1323#0" expanded="false" />
-                <element signature="e#1332#1475#0" expanded="false" />
-                <marker date="1493559499000" expanded="true" signature="1679:1871" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="history.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reducers/history.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/components/rejectionForm/form.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="192">
+              <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -99,18 +57,10 @@
         <entry file="file://$PROJECT_DIR$/components/rejectionForm/formComponent.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
-              <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/rejectionForm/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-              <folding />
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -164,18 +114,18 @@
         <option value="$PROJECT_DIR$/constants/index.js" />
         <option value="$PROJECT_DIR$/reducers/list.js" />
         <option value="$PROJECT_DIR$/reducers/points.js" />
-        <option value="$PROJECT_DIR$/components/rejectionForm/index.js" />
         <option value="$PROJECT_DIR$/.eslintrc" />
         <option value="$PROJECT_DIR$/reducers/history.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/tests/index.js" />
         <option value="$PROJECT_DIR$/components/Head.js" />
         <option value="$PROJECT_DIR$/containers/styles.css" />
-        <option value="$PROJECT_DIR$/components/rejectionForm/formComponent.js" />
-        <option value="$PROJECT_DIR$/components/rejectionForm/form.js" />
-        <option value="$PROJECT_DIR$/containers/MainContainer.js" />
-        <option value="$PROJECT_DIR$/components/history.js" />
         <option value="$PROJECT_DIR$/components/List.js" />
+        <option value="$PROJECT_DIR$/containers/MainContainer.js" />
+        <option value="$PROJECT_DIR$/components/rejectionForm/form.js" />
+        <option value="$PROJECT_DIR$/components/rejectionForm/index.js" />
+        <option value="$PROJECT_DIR$/components/rejectionForm/formComponent.js" />
+        <option value="$PROJECT_DIR$/components/history.js" />
       </list>
     </option>
   </component>
@@ -261,24 +211,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rejection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rejection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rejectionForm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -444,12 +376,12 @@
       <workItem from="1493470395907" duration="27497000" />
       <workItem from="1493506644332" duration="1856000" />
       <workItem from="1493510718902" duration="11112000" />
-      <workItem from="1493555239644" duration="5967000" />
+      <workItem from="1493555239644" duration="7145000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46432000" />
+    <option name="totallyTimeSpent" value="47610000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -613,7 +545,7 @@
         <state relative-caret-position="90">
           <caret line="6" column="47" lean-forward="false" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
           <folding>
-            <element signature="e#0#26#0" expanded="false" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -638,7 +570,7 @@
             <element signature="n#!!block;n#handleAnswer#0;n#Main#0" expanded="false" />
             <element signature="e#1231#1323#0" expanded="false" />
             <element signature="e#1332#1475#0" expanded="false" />
-            <marker date="1493559499000" expanded="true" signature="1679:1871" ph="..." />
+            <marker date="1493561865000" expanded="true" signature="1679:1871" ph="..." />
           </folding>
         </state>
       </provider>
@@ -806,37 +738,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/containers/MainContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="54" column="16" lean-forward="false" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
-          <folding>
-            <element signature="n#!!block;n#constructor#0;n#Main#0" expanded="false" />
-            <element signature="n#!!block;n#handleSubmit#0;n#Main#0" expanded="false" />
-            <element signature="n#!!block;n#handleAnswer#0;n#Main#0" expanded="false" />
-            <element signature="e#1231#1323#0" expanded="false" />
-            <element signature="e#1332#1475#0" expanded="false" />
-            <marker date="1493559499000" expanded="true" signature="1679:1871" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/history.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/List.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="541">
           <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/containers/MainContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="59" column="41" lean-forward="false" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
+          <folding>
+            <element signature="n#!!block;n#constructor#0;n#Main#0" expanded="false" />
+            <element signature="n#!!block;n#handleSubmit#0;n#Main#0" expanded="false" />
+            <element signature="n#!!block;n#handleAnswer#0;n#Main#0" expanded="false" />
+            <element signature="e#1231#1323#0" expanded="false" />
+            <element signature="e#1332#1475#0" expanded="false" />
+            <marker date="1493561865000" expanded="true" signature="1679:1871" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/rejectionForm/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -849,26 +781,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/components/rejectionForm/form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/components/rejectionForm/formComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/rejectionForm/index.js">
+    <entry file="file://$PROJECT_DIR$/components/history.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/rejectionForm/form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="192">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding />
         </state>
       </provider>

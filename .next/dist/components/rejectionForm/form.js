@@ -6,7 +6,9 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function (props) {
   var handleSubmit = props.handleSubmit,
-      reset = props.reset;
+      reset = props.reset,
+      pristine = props.pristine,
+      submitting = props.submitting;
 
   return _react2.default.createElement(_semanticUiReact.Form, { onSubmit: handleSubmit, __source: {
       fileName: _jsxFileName,
@@ -49,6 +51,7 @@ exports.default = function (props) {
   }), _react2.default.createElement(_semanticUiReact.Button, {
     positive: true,
     type: 'submit',
+    disabled: pristine || submitting,
     onClick: function onClick(e) {
       e.preventDefault();
       handleSubmit();

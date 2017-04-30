@@ -2,7 +2,14 @@ import React from 'react';
 import { reduxForm } from 'redux-form';
 import Form from './form';
 
+const validate = ({ asked, person }) => {
+  const errors = {};
+  if (!asked ) errors.asked = 'Asked Field Required';
+  if (!person) errors.person = 'Person Field Required';
+  return errors;
+}
 
 export default reduxForm({
-  form: 'RejectionForm'
+  form: 'RejectionForm',
+  validate
 })(Form);

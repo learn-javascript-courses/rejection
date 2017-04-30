@@ -57,13 +57,12 @@ class Main extends Component {
           <Grid.Row>
             <Container textAlign={'center'}>
               <Segment padded>
-                <div>Total {points}
+                <div>Total {points}</div>
                   <Button
                     type={'submit'}
                     onClick={clearScore}>
                     {'Clear Score'}
                   </Button>
-                </div>
               </Segment>
             </Container>
           </Grid.Row>

@@ -29,14 +29,16 @@ exports.default = function (_ref) {
       error = _ref$meta.error,
       custom = (0, _objectWithoutProperties3.default)(_ref, ['input', 'meta']);
 
+  var hasError = touched && error !== undefined;
   return _react2.default.createElement(_semanticUiReact.Form.Input, (0, _extends3.default)({
     label: input.name.toUpperCase(),
     type: 'text',
     fluid: true
   }, input, custom, {
+    error: hasError,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 8
     }
   }));
 };

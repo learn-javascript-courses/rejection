@@ -16,6 +16,17 @@ var _form2 = _interopRequireDefault(_form);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var validate = function validate(_ref) {
+  var asked = _ref.asked,
+      person = _ref.person;
+
+  var errors = {};
+  if (!asked) errors.asked = 'Asked Field Required';
+  if (!person) errors.person = 'Person Field Required';
+  return errors;
+};
+
 exports.default = (0, _reduxForm.reduxForm)({
-  form: 'RejectionForm'
+  form: 'RejectionForm',
+  validate: validate
 })(_form2.default);

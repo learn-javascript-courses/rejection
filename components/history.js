@@ -7,7 +7,7 @@ export default ({
                   addToHistory,
                   deleteFromHistory
 }) => history.length > 0 ? (
-  <Container fluid centered>
+  <Container fluid >
   <Segment>
     <Button compact floated={'right'} basic type={'button'} onClick={clearHistory}>{'Clear History'}</Button>
     <br />

@@ -4,7 +4,7 @@ import { Button, Form } from 'semantic-ui-react';
 import FormComponent from './formComponent';
 
 export default function(props) {
-  const { handleSubmit, reset } = props;
+  const { handleSubmit, reset, pristine, submitting } = props;
   return (
     <Form onSubmit={handleSubmit}>
       <Field
@@ -27,6 +27,7 @@ export default function(props) {
         <Button
           positive
           type={'submit'}
+          disabled={pristine || submitting}
           onClick={(e) => {
             e.preventDefault();
             handleSubmit();

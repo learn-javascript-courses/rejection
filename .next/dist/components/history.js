@@ -19,7 +19,7 @@ exports.default = function (_ref) {
       clearHistory = _ref.clearHistory,
       addToHistory = _ref.addToHistory,
       deleteFromHistory = _ref.deleteFromHistory;
-  return history.length > 0 ? _react2.default.createElement(_semanticUiReact.Container, { fluid: true, centered: true, __source: {
+  return history.length > 0 ? _react2.default.createElement(_semanticUiReact.Container, { fluid: true, __source: {
       fileName: _jsxFileName,
       lineNumber: 10
     }
