@@ -113,13 +113,18 @@ var Main = function (_Component) {
           fileName: _jsxFileName,
           lineNumber: 36
         }
-      }, _react2.default.createElement(_rejectionForm2.default, { className: 'main-container', handleSubmit: this.handleSubmit, __source: {
+      }, _react2.default.createElement('h1', {
+        __source: {
           fileName: _jsxFileName,
           lineNumber: 37
         }
-      }), _react2.default.createElement(_List2.default, { handleAnswer: this.handleAnswer, list: list, key: Date.now(), __source: {
+      }, 'Rejection Game'), _react2.default.createElement(_rejectionForm2.default, { className: 'main-container', handleSubmit: this.handleSubmit, __source: {
           fileName: _jsxFileName,
           lineNumber: 38
+        }
+      }), _react2.default.createElement(_List2.default, { handleAnswer: this.handleAnswer, list: list, key: Date.now(), __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39
         }
       }), _react2.default.createElement(_history2.default, {
         history: history,
@@ -128,16 +133,16 @@ var Main = function (_Component) {
         deleteFromHistory: deleteFromHistory,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 40
         }
       }), _react2.default.createElement('div', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 46
         }
       }, 'Total ', points, ' ', _react2.default.createElement('input', { type: 'submit', value: 'Clear Score', onClick: clearScore, __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 46
         }
       })));
     }

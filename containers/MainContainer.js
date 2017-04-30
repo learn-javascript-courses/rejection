@@ -34,6 +34,7 @@ class Main extends Component {
     } = this.props;
     return (
       <div >
+        <h1>{`Rejection Game`}</h1>
         <RejectionForm className={'main-container'} handleSubmit={this.handleSubmit} />
         <List handleAnswer={this.handleAnswer} list={list} key={Date.now()} />
         <History
