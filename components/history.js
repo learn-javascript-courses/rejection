@@ -24,9 +24,9 @@ export default ({
           key={item + Date.now() + item.person + item.time}
           color={item.result === 'REJECTED' ? 'red' : 'green'}
         >
-          <Card.Header>You Asked : {item.asked}</Card.Header>
-          <Card.Meta> {item.time} </Card.Meta>
-          <Card.Description>{item.person}</Card.Description>
+          <Card.Header>You Asked For : {item.asked}</Card.Header>
+          <Card.Meta>Date: {item.time} </Card.Meta>
+          <Card.Description>You Asked : {item.person}</Card.Description>
           <Card.Content extra>{item.result}</Card.Content>
           <Button
             basic

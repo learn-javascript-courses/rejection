@@ -34,7 +34,7 @@ function List(_ref) {
       lineNumber: 8
     }
   }, list.map(function (ask, index) {
-    return _react2.default.createElement(_semanticUiReact.Card, { raised: true, centered: true, key: ask.person + ask.name + Date.now(), __source: {
+    return _react2.default.createElement(_semanticUiReact.Card, { raised: true, centered: true, key: ask.person + ask.asked + Date.now(), __source: {
         fileName: _jsxFileName,
         lineNumber: 10
       }
@@ -48,7 +48,7 @@ function List(_ref) {
         fileName: _jsxFileName,
         lineNumber: 12
       }
-    }, 'You Asked : ', ask.asked), _react2.default.createElement(_semanticUiReact.Card.Meta, {
+    }, 'You Asked : ', ask.asked.toUpperCase()), _react2.default.createElement(_semanticUiReact.Card.Meta, {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 13
@@ -65,6 +65,7 @@ function List(_ref) {
     }, _react2.default.createElement(_semanticUiReact.Button, {
       basic: true,
       color: 'red',
+      fluid: true,
       onClick: function onClick(e) {
         return handleAnswer(e, { value: ask, answer: Actions.rejected, index: index });
       },
@@ -75,18 +76,19 @@ function List(_ref) {
     }, 'Rejected'), _react2.default.createElement(_semanticUiReact.Button, {
       basic: true,
       color: 'green',
+      fluid: true,
       onClick: function onClick(e) {
         return handleAnswer(e, { value: ask, answer: Actions.accepted, index: index });
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 24
       }
     }, 'Accepted')));
   }))) : _react2.default.createElement('div', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 35
     }
   });
 }

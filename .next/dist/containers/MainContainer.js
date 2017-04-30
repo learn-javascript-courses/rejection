@@ -179,7 +179,7 @@ var Main = function (_Component) {
           fileName: _jsxFileName,
           lineNumber: 60
         }
-      }, 'Total ', points), _react2.default.createElement(_semanticUiReact.Button, {
+      }, 'Points ', points), _react2.default.createElement(_semanticUiReact.Button, {
         type: 'submit',
         onClick: clearScore,
         __source: {

@@ -56,17 +56,17 @@ exports.default = function (_ref) {
         fileName: _jsxFileName,
         lineNumber: 27
       }
-    }, 'You Asked : ', item.asked), _react2.default.createElement(_semanticUiReact.Card.Meta, {
+    }, 'You Asked For : ', item.asked), _react2.default.createElement(_semanticUiReact.Card.Meta, {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 28
       }
-    }, ' ', item.time, ' '), _react2.default.createElement(_semanticUiReact.Card.Description, {
+    }, 'Date: ', item.time, ' '), _react2.default.createElement(_semanticUiReact.Card.Description, {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 29
       }
-    }, item.person), _react2.default.createElement(_semanticUiReact.Card.Content, { extra: true, __source: {
+    }, 'You Asked : ', item.person), _react2.default.createElement(_semanticUiReact.Card.Content, { extra: true, __source: {
         fileName: _jsxFileName,
         lineNumber: 30
       }

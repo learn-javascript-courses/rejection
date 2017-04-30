@@ -7,9 +7,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/commons.js" afterPath="$PROJECT_DIR$/.next/commons.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/components/List.js" afterPath="$PROJECT_DIR$/.next/dist/components/List.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/components/history.js" afterPath="$PROJECT_DIR$/.next/dist/components/history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/components/rejectionForm/form.js" afterPath="$PROJECT_DIR$/.next/dist/components/rejectionForm/form.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/containers/MainContainer.js" afterPath="$PROJECT_DIR$/.next/dist/containers/MainContainer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/manifest.js" afterPath="$PROJECT_DIR$/.next/manifest.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/List.js" afterPath="$PROJECT_DIR$/components/List.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/history.js" afterPath="$PROJECT_DIR$/components/history.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/containers/MainContainer.js" afterPath="$PROJECT_DIR$/containers/MainContainer.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,13 +29,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="List.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/components/List.js">
+      <file leaf-file-name="MainContainer.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/containers/MainContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="768">
-              <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+            <state relative-caret-position="465">
+              <caret line="66" column="24" lean-forward="true" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
+                <element signature="n#!!block;n#constructor#0;n#Main#0" expanded="false" />
+                <element signature="n#!!block;n#handleSubmit#0;n#Main#0" expanded="false" />
+                <element signature="n#!!block;n#handleAnswer#0;n#Main#0" expanded="false" />
+                <marker date="1493572480000" expanded="true" signature="1674:1856" ph="..." />
               </folding>
             </state>
           </provider>
@@ -86,8 +92,8 @@
         <option value="$PROJECT_DIR$/tests/index.js" />
         <option value="$PROJECT_DIR$/components/rejectionForm/form.js" />
         <option value="$PROJECT_DIR$/components/history.js" />
-        <option value="$PROJECT_DIR$/containers/MainContainer.js" />
         <option value="$PROJECT_DIR$/components/List.js" />
+        <option value="$PROJECT_DIR$/containers/MainContainer.js" />
       </list>
     </option>
   </component>
@@ -144,20 +150,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rejection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rejection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="reducers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -186,39 +178,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="containers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rejection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rejection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rejection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rejection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rejectionForm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -384,12 +344,12 @@
       <workItem from="1493470395907" duration="27497000" />
       <workItem from="1493506644332" duration="1856000" />
       <workItem from="1493510718902" duration="11112000" />
-      <workItem from="1493555239644" duration="9190000" />
+      <workItem from="1493555239644" duration="10314000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49655000" />
+    <option name="totallyTimeSpent" value="50779000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -402,8 +362,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24876674" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24876674" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.040963855" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -521,7 +482,7 @@
         <state relative-caret-position="30">
           <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -583,11 +544,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#41#0" expanded="false" />
+            <element signature="e#0#41#0" expanded="true" />
             <element signature="n#!!block;n#constructor#0;n#Main#0" expanded="false" />
             <element signature="n#!!block;n#handleSubmit#0;n#Main#0" expanded="false" />
             <element signature="n#!!block;n#handleAnswer#0;n#Main#0" expanded="false" />
-            <marker date="1493564605000" expanded="true" signature="1664:1846" ph="..." />
+            <marker date="1493572480000" expanded="true" signature="1674:1856" ph="..." />
           </folding>
         </state>
       </provider>
@@ -791,36 +752,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/history.js">
+    <entry file="file://$PROJECT_DIR$/components/List.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="899">
-          <caret line="40" column="3" lean-forward="false" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
+        <state relative-caret-position="199">
+          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
           <folding>
             <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/containers/MainContainer.js">
+    <entry file="file://$PROJECT_DIR$/components/history.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="63" column="16" lean-forward="false" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-            <element signature="n#!!block;n#constructor#0;n#Main#0" expanded="false" />
-            <element signature="n#!!block;n#handleSubmit#0;n#Main#0" expanded="false" />
-            <element signature="n#!!block;n#handleAnswer#0;n#Main#0" expanded="false" />
-            <marker date="1493564605000" expanded="true" signature="1664:1846" ph="..." />
-          </folding>
+        <state relative-caret-position="253">
+          <caret line="28" column="40" lean-forward="false" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/List.js">
+    <entry file="file://$PROJECT_DIR$/containers/MainContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        <state relative-caret-position="465">
+          <caret line="66" column="24" lean-forward="true" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#constructor#0;n#Main#0" expanded="false" />
+            <element signature="n#!!block;n#handleSubmit#0;n#Main#0" expanded="false" />
+            <element signature="n#!!block;n#handleAnswer#0;n#Main#0" expanded="false" />
+            <marker date="1493572480000" expanded="true" signature="1674:1856" ph="..." />
           </folding>
         </state>
       </provider>
