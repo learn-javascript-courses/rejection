@@ -8,7 +8,8 @@ exports.default = function (props) {
   var handleSubmit = props.handleSubmit,
       reset = props.reset,
       pristine = props.pristine,
-      submitting = props.submitting;
+      submitting = props.submitting,
+      errors = props.errors;
 
   return _react2.default.createElement(_semanticUiReact.Form, { onSubmit: handleSubmit, __source: {
       fileName: _jsxFileName,
@@ -51,7 +52,7 @@ exports.default = function (props) {
   }), _react2.default.createElement(_semanticUiReact.Button, {
     positive: true,
     type: 'submit',
-    disabled: pristine || submitting,
+    disabled: pristine && errors === undefined || submitting && errors === undefined,
     onClick: function onClick(e) {
       e.preventDefault();
       handleSubmit();

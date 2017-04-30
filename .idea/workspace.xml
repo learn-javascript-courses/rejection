@@ -2,30 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="372e3f31-1e00-4867-9c53-09a255b6cbbf" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/0.09f3018af344f7dda758.hot-update.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/0.290719a2830a3b862e55.hot-update.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/0.54caa87bd8116877f9b8.hot-update.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/0.81a6cd191976581dd663.hot-update.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/0.863937ebafacb4f2528e.hot-update.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/0.a663c6d17cace16f89d1.hot-update.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/0.c226007755f9e537dfb3.hot-update.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/5.290719a2830a3b862e55.hot-update.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/5.e594ee528a0b7911d94b.hot-update.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/e594ee528a0b7911d94b.hot-update.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/0.9a1d43e5f875c5558cab.hot-update.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/5.c80768d2402bd3dfc250.hot-update.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/c80768d2402bd3dfc250.hot-update.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/bundles/pages/index.js" afterPath="$PROJECT_DIR$/.next/bundles/pages/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/commons.js" afterPath="$PROJECT_DIR$/.next/commons.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/components/history.js" afterPath="$PROJECT_DIR$/.next/dist/components/history.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/components/rejectionForm/form.js" afterPath="$PROJECT_DIR$/.next/dist/components/rejectionForm/form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/components/rejectionForm/formComponent.js" afterPath="$PROJECT_DIR$/.next/dist/components/rejectionForm/formComponent.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/components/rejectionForm/index.js" afterPath="$PROJECT_DIR$/.next/dist/components/rejectionForm/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/containers/MainContainer.js" afterPath="$PROJECT_DIR$/.next/dist/containers/MainContainer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/manifest.js" afterPath="$PROJECT_DIR$/.next/manifest.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/history.js" afterPath="$PROJECT_DIR$/components/history.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/rejectionForm/form.js" afterPath="$PROJECT_DIR$/components/rejectionForm/form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/rejectionForm/formComponent.js" afterPath="$PROJECT_DIR$/components/rejectionForm/formComponent.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/rejectionForm/index.js" afterPath="$PROJECT_DIR$/components/rejectionForm/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/containers/MainContainer.js" afterPath="$PROJECT_DIR$/containers/MainContainer.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,21 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="history.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/components/history.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="formComponent.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/rejectionForm/formComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="312">
+              <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -73,6 +51,26 @@
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/rejectionForm/form.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/rejectionForm/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -122,10 +120,10 @@
         <option value="$PROJECT_DIR$/containers/styles.css" />
         <option value="$PROJECT_DIR$/components/List.js" />
         <option value="$PROJECT_DIR$/containers/MainContainer.js" />
-        <option value="$PROJECT_DIR$/components/rejectionForm/form.js" />
-        <option value="$PROJECT_DIR$/components/rejectionForm/index.js" />
         <option value="$PROJECT_DIR$/components/rejectionForm/formComponent.js" />
         <option value="$PROJECT_DIR$/components/history.js" />
+        <option value="$PROJECT_DIR$/components/rejectionForm/index.js" />
+        <option value="$PROJECT_DIR$/components/rejectionForm/form.js" />
       </list>
     </option>
   </component>
@@ -169,48 +167,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="rejection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rejection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rejection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reducers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rejection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rejection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="containers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rejection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rejection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -376,12 +332,12 @@
       <workItem from="1493470395907" duration="27497000" />
       <workItem from="1493506644332" duration="1856000" />
       <workItem from="1493510718902" duration="11112000" />
-      <workItem from="1493555239644" duration="7145000" />
+      <workItem from="1493555239644" duration="7889000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47610000" />
+    <option name="totallyTimeSpent" value="48354000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -738,16 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/List.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/containers/MainContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -763,16 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/rejectionForm/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reducers/history.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -781,18 +717,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/rejectionForm/form.js">
+    <entry file="file://$PROJECT_DIR$/components/List.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/rejectionForm/formComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="541">
+          <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -802,7 +730,33 @@
     <entry file="file://$PROJECT_DIR$/components/history.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
-          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/rejectionForm/formComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/rejectionForm/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/rejectionForm/form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
           <folding />
         </state>
       </provider>

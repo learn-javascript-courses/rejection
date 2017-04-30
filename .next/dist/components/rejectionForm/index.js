@@ -21,8 +21,8 @@ var validate = function validate(_ref) {
       person = _ref.person;
 
   var errors = {};
-  if (!asked) errors.asked = 'Asked Field Required';
-  if (!person) errors.person = 'Person Field Required';
+  if (asked === undefined) errors.asked = 'Asked Field Required';
+  if (person === undefined) errors.person = 'Person Field Required';
   return errors;
 };
 
