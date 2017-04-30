@@ -1,5 +1,5 @@
 import React from 'react';
-import { reduxForm } from 'redux-form';
+import { reduxForm , reset} from 'redux-form';
 import Form from './form';
 
 

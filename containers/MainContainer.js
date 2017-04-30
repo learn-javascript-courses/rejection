@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
+import { reset } from 'redux-form';
 import { connect } from 'react-redux';
 import * as Actions from '../actions';
 import List from '../components/List';

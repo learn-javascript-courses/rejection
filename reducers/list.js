@@ -9,7 +9,6 @@ export default handleActions({
       filter: 'none',
       id: state.reduce((maxId, ask) => Math.max(ask.id, maxId), -1) + 1
     });
-    console.log('returning state');
     return [...state, request];
   },
   [Actions.DELETE]: (state, { payload }) => state.filter(asks => state[payload].id !== asks.id)

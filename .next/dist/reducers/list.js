@@ -39,7 +39,6 @@ exports.default = (0, _reduxActions.handleActions)((_handleActions = {}, (0, _de
       return Math.max(ask.id, maxId);
     }, -1) + 1
   });
-  console.log('returning state');
   return [].concat((0, _toConsumableArray3.default)(state), [request]);
 }), (0, _defineProperty3.default)(_handleActions, Actions.DELETE, function (state, _ref2) {
   var payload = _ref2.payload;

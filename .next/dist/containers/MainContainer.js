@@ -30,6 +30,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _redux = require('redux');
 
+var _reduxForm = require('redux-form');
+
 var _reactRedux = require('react-redux');
 
 var _actions = require('../actions');
@@ -109,15 +111,15 @@ var Main = function (_Component) {
       return _react2.default.createElement('div', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 36
         }
       }, _react2.default.createElement(_rejectionForm2.default, { className: 'main-container', handleSubmit: this.handleSubmit, __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 37
         }
       }), _react2.default.createElement(_List2.default, { handleAnswer: this.handleAnswer, list: list, key: Date.now(), __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 38
         }
       }), _react2.default.createElement(_history2.default, {
         history: history,
@@ -126,16 +128,16 @@ var Main = function (_Component) {
         deleteFromHistory: deleteFromHistory,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 39
         }
       }), _react2.default.createElement('div', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 45
         }
       }, 'Total ', points, ' ', _react2.default.createElement('input', { type: 'submit', value: 'Clear Score', onClick: clearScore, __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 45
         }
       })));
     }

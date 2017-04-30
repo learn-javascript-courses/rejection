@@ -19,15 +19,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var _jsxFileName = '/Users/RyanBas/Documents/web_development/eric-elliot-mentorship/rejection/components/rejectionForm/form.js';
 function Form(props) {
-  var handleSubmit = props.handleSubmit;
+  console.log('props', props);
+  var handleSubmit = props.handleSubmit,
+      reset = props.reset;
 
   return _react2.default.createElement('form', { onSubmit: handleSubmit, __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
     }
   }, _react2.default.createElement('label', { htmlFor: 'Asked', __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 10
     }
   }, 'Asked'), _react2.default.createElement(_reduxForm.Field, {
     name: 'asked',
@@ -35,11 +37,11 @@ function Form(props) {
     component: _formComponent2.default,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 11
     }
   }), _react2.default.createElement('label', { htmlFor: 'Asked Who', __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 16
     }
   }, 'Asked Who'), _react2.default.createElement(_reduxForm.Field, {
     name: 'person',
@@ -47,11 +49,14 @@ function Form(props) {
     component: _formComponent2.default,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 17
     }
-  }), _react2.default.createElement('input', { type: 'button', value: 'submit', onClick: handleSubmit, __source: {
+  }), _react2.default.createElement('input', { type: 'button', value: 'submit', onClick: function onClick() {
+      handleSubmit();
+      return reset('RejectionForm');
+    }, __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 22
     }
   }));
 }
