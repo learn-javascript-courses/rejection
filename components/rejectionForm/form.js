@@ -3,7 +3,7 @@ import { Field } from 'redux-form';
 import { Button, Form } from 'semantic-ui-react';
 import FormComponent from './formComponent';
 
-export default function(props) {
+export default function (props) {
   const { handleSubmit, reset, pristine, submitting, errors } = props;
   return (
     <Form onSubmit={handleSubmit}>
@@ -22,7 +22,9 @@ export default function(props) {
           onClick={e => {
             e.preventDefault();
             return reset('RejectionForm');
-        }}>Cancel</Button>
+          }}
+        >Cancel
+        </Button>
         <Button.Or />
         <Button
           positive

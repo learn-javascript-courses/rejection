@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import { Button, Grid, Segment, Divider , Container, Row} from 'semantic-ui-react';
+import { Button, Grid, Segment, Container } from 'semantic-ui-react';
 import * as Actions from '../actions';
 import List from '../components/List';
 import RejectionForm from '../components/rejectionForm';
@@ -37,32 +37,33 @@ class Main extends Component {
     return (
       <div>
         <Container textAlign={'center'}>
-           <h1>{'Rejection Game'}</h1>
+          <h1>{'Rejection Game'}</h1>
         </Container>
         <Container textAlign={'center'}>
           <RejectionForm className={'main-container'} handleSubmit={this.handleSubmit} />
         </Container>
         <Grid columns={2}>
           <Grid.Column>
-          <List handleAnswer={this.handleAnswer} list={list} key={Date.now()} />
+            <List handleAnswer={this.handleAnswer} list={list} key={Date.now()} />
           </Grid.Column>
           <Grid.Column>
-              <History
-                history={history}
-                addToHistory={addToHistory}
-                clearHistory={clearHistory}
-                deleteFromHistory={deleteFromHistory}
-              />
+            <History
+              history={history}
+              addToHistory={addToHistory}
+              clearHistory={clearHistory}
+              deleteFromHistory={deleteFromHistory}
+            />
           </Grid.Column>
           <Grid.Row>
             <Container textAlign={'center'}>
               <Segment padded>
                 <div>Total {points}</div>
-                  <Button
-                    type={'submit'}
-                    onClick={clearScore}>
-                    {'Clear Score'}
-                  </Button>
+                <Button
+                  type={'submit'}
+                  onClick={clearScore}
+                >
+                  {'Clear Score'}
+                </Button>
               </Segment>
             </Container>
           </Grid.Row>
@@ -72,9 +73,7 @@ class Main extends Component {
     );
   }
 }
-const styles = {
 
-}
 const mapStateToProps = (state) => ({
   list: state.list,
   points: state.points,

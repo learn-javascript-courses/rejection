@@ -7,7 +7,7 @@ const validate = ({ asked, person }) => {
   if (asked === undefined) errors.asked = 'Asked Field Required';
   if (person === undefined) errors.person = 'Person Field Required';
   return errors;
-}
+};
 
 export default reduxForm({
   form: 'RejectionForm',
