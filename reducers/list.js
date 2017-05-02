@@ -1,6 +1,5 @@
 import { handleActions } from 'redux-actions';
 import * as Actions from '../constants/';
-
 const initialState = [];
 
 export default handleActions({

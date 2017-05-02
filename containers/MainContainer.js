@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import { Button, Grid, Segment, Container } from 'semantic-ui-react';
+import { Button, Grid, Segment, Container} from 'semantic-ui-react';
 import * as Actions from '../actions';
 import List from '../components/List';
 import RejectionForm from '../components/rejectionForm';
