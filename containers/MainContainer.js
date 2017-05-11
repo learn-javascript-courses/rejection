@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import { Button, Grid, Segment, Container} from 'semantic-ui-react';
+import { Button, Grid, Segment, Container } from 'semantic-ui-react';
 import * as Actions from '../actions';
 import List from '../components/List';
 import RejectionForm from '../components/rejectionForm';
 import History from '../components/history';
-
 
 class Main extends Component {
   constructor() {
@@ -21,10 +20,12 @@ class Main extends Component {
   }
   handleAnswer(event, { value, answer, index }) {
     event.preventDefault();
+
     const { rejected, accepted, deleteAsk, addToHistory } = this.props.actions;
     if (answer === Actions.rejected) rejected();
     else accepted();
-    addToHistory({ time: moment().format('LLLL'), value, answer });
+
+    addToHistory({ time: moment().format('LLLL'), answer, ...value });
     deleteAsk(index);
   }
   render() {
@@ -32,7 +33,7 @@ class Main extends Component {
       list,
       points,
       history,
-     actions: { addToHistory, clearHistory, deleteFromHistory, clearScore }
+      actions: { addToHistory, clearHistory, deleteFromHistory, clearScore }
     } = this.props;
     return (
       <div>
@@ -58,10 +59,7 @@ class Main extends Component {
             <Container textAlign={'center'}>
               <Segment padded>
                 <div>Points {points}</div>
-                <Button
-                  type={'submit'}
-                  onClick={clearScore}
-                >
+                <Button type={'submit'} onClick={clearScore}>
                   {'Clear Score'}
                 </Button>
               </Segment>
@@ -74,13 +72,13 @@ class Main extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   list: state.list,
   points: state.points,
   history: state.history,
   form: state.form
 });
-const mapDispatchToProps = (dispatch) => ({ actions: bindActionCreators(Actions, dispatch) });
+const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(Actions, dispatch) });
 
 const MainContainer = connect(mapStateToProps, mapDispatchToProps)(Main);
 export default MainContainer;

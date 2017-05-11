@@ -20,7 +20,9 @@ var _history = require('./history');
 
 var _history2 = _interopRequireDefault(_history);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 exports.default = (0, _redux.combineReducers)({
   list: _list2.default,

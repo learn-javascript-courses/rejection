@@ -14,7 +14,9 @@ var _form = require('./form');
 
 var _form2 = _interopRequireDefault(_form);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 var validate = function validate(_ref) {
   var asked = _ref.asked,

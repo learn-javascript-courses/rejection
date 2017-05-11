@@ -8,7 +8,7 @@
     "build": "next build",
     "lint": "eslint --cache --ignore-path .gitignore --ext .jsx,.js --format=node_modules/eslint-formatter-pretty .",
     "start": "next start",
-    "test": "clear ; babel-node tests/index.js"
+    "test": "clear ; babel-node tests/index.js ; npm run -s lint"
   },
   "repository": {
     "type": "git",
