@@ -4,16 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }return target;
-};
-
 var _createClass = function () {
   function defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
@@ -104,42 +94,45 @@ var Main = function (_Component) {
   _createClass(Main, [{
     key: 'handleSubmit',
     value: function handleSubmit() {
-      var RejectionForm = this.props.form.RejectionForm;
+      var _props = this.props,
+          add = _props.actions.add,
+          _props$form$Rejection = _props.form.RejectionForm.values,
+          asked = _props$form$Rejection.asked,
+          person = _props$form$Rejection.person;
 
-      this.props.actions.add(RejectionForm.values);
+      add(asked, person);
     }
   }, {
     key: 'handleAnswer',
     value: function handleAnswer(event, _ref) {
       var value = _ref.value,
-          answer = _ref.answer,
-          index = _ref.index;
+          answer = _ref.answer;
 
       event.preventDefault();
-
       var _props$actions = this.props.actions,
           rejected = _props$actions.rejected,
           accepted = _props$actions.accepted,
           deleteAsk = _props$actions.deleteAsk,
           addToHistory = _props$actions.addToHistory;
 
-      if (answer === Actions.rejected) rejected();else accepted();
+      if (answer().type === 'REJECTED') rejected();else accepted();
+      var result = Object.assign(value, { result: answer().type });
 
-      addToHistory(_extends({ time: (0, _moment2.default)().format('LLLL'), answer: answer }, value));
-      deleteAsk(index);
+      addToHistory(result);
+      deleteAsk(result.id);
     }
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props,
-          list = _props.list,
-          points = _props.points,
-          history = _props.history,
-          _props$actions2 = _props.actions,
-          addToHistory = _props$actions2.addToHistory,
-          clearHistory = _props$actions2.clearHistory,
-          deleteFromHistory = _props$actions2.deleteFromHistory,
-          clearScore = _props$actions2.clearScore;
+      var _props2 = this.props,
+          list = _props2.list,
+          points = _props2.points,
+          history = _props2.history,
+          _props2$actions = _props2.actions,
+          addToHistory = _props2$actions.addToHistory,
+          clearHistory = _props2$actions.clearHistory,
+          deleteFromHistory = _props2$actions.deleteFromHistory,
+          clearScore = _props2$actions.clearScore;
 
       return _react2.default.createElement('div', null, _react2.default.createElement(_semanticUiReact.Container, { textAlign: 'center' }, _react2.default.createElement('h1', null, 'Rejection Game')), _react2.default.createElement(_semanticUiReact.Container, { textAlign: 'center' }, _react2.default.createElement(_rejectionForm2.default, { className: 'main-container', handleSubmit: this.handleSubmit })), _react2.default.createElement(_semanticUiReact.Grid, { columns: 2 }, _react2.default.createElement(_semanticUiReact.Grid.Column, null, _react2.default.createElement(_List2.default, { handleAnswer: this.handleAnswer, list: list, key: Date.now() })), _react2.default.createElement(_semanticUiReact.Grid.Column, null, _react2.default.createElement(_history2.default, {
         history: history,

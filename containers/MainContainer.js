@@ -15,18 +15,19 @@ class Main extends Component {
     this.handleAnswer = this.handleAnswer.bind(this);
   }
   handleSubmit() {
-    const { RejectionForm } = this.props.form;
-    this.props.actions.add(RejectionForm.values);
+    const { actions: { add }, form: { RejectionForm: { values: { asked, person } } } } = this.props;
+    add(asked, person);
   }
-  handleAnswer(event, { value, answer, index }) {
+  handleAnswer(event, { value, answer }) {
     event.preventDefault();
-
     const { rejected, accepted, deleteAsk, addToHistory } = this.props.actions;
-    if (answer === Actions.rejected) rejected();
-    else accepted();
 
-    addToHistory({ time: moment().format('LLLL'), answer, ...value });
-    deleteAsk(index);
+    if (answer().type === 'REJECTED') rejected();
+    else accepted();
+    const result = Object.assign(value, { result: answer().type });
+
+    addToHistory(result);
+    deleteAsk(result.id);
   }
   render() {
     const {

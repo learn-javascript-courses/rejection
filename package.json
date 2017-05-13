@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ryanbas21/rejection#readme",
   "dependencies": {
+    "cuid": "^1.3.8",
     "immutable": "^3.8.1",
     "moment": "^2.18.1",
     "next": "^2.3.0-alpha1",
@@ -29,7 +30,6 @@
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
-    "redux-actions": "^2.0.2",
     "redux-form": "^6.6.3",
     "semantic-ui-react": "^0.68.2"
   },

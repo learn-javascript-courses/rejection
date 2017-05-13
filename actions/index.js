@@ -1,12 +1,55 @@
+import cuid from 'cuid';
 import { createAction } from 'redux-actions';
-import * as Actions from '../constants';
+import * as Constants from '../constants';
 
-export const add = createAction(Actions.ADD, values => values);
-export const rejected = createAction(Actions.REJECTED);
-export const accepted = createAction(Actions.ACCEPTED);
-export const edit = createAction(Actions.EDIT);
-export const deleteAsk = createAction(Actions.DELETE, id => id);
-export const deleteFromHistory = createAction(Actions.DELETE_FROM_HISTORY, id => id);
-export const clearHistory = createAction(Actions.CLEAR_HISTORY);
-export const addToHistory = createAction(Actions.ADD_HISTORY, value => value);
-export const clearScore = createAction(Actions.CLEAR_SCORE);
+export const add = (
+  asked = '',
+  person = '',
+  time = Date.now(),
+  result = undefined,
+  id = cuid()
+) => ({
+  type: Constants.ADD,
+  payload: {
+    asked,
+    person,
+    time,
+    result,
+    id
+  }
+});
+
+export const rejected = () => ({
+  type: Constants.REJECTED
+});
+export const accepted = () => ({
+  type: Constants.ACCEPTED
+});
+
+export const edit = payload => ({
+  type: Constants.EDIT,
+  payload
+});
+
+export const deleteAsk = payload => ({
+  type: Constants.DELETE,
+  payload
+});
+
+export const deleteFromHistory = payload => ({
+  type: Constants.DELETE_FROM_HISTORY,
+  payload
+});
+
+export const clearHistory = () => ({
+  type: Constants.CLEAR_HISTORY
+});
+
+export const addToHistory = payload => ({
+  type: Constants.ADD_HISTORY,
+  payload
+});
+
+export const clearScore = () => ({
+  type: Constants.CLEAR_SCORE
+});

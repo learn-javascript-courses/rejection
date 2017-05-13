@@ -4,9 +4,23 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _handleActions;
+exports.default = function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var _ref = arguments[1];
+  var type = _ref.type,
+      payload = _ref.payload;
 
-var _reduxActions = require('redux-actions');
+  switch (type) {
+    case Actions.ADD:
+      return [].concat(_toConsumableArray(state), [payload]);
+    case Actions.DELETE:
+      return state.filter(function (asks) {
+        return payload !== asks.id;
+      });
+    default:
+      return state;
+  }
+};
 
 var _constants = require('../constants/');
 
@@ -24,14 +38,6 @@ function _interopRequireWildcard(obj) {
   }
 }
 
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
-  } else {
-    obj[key] = value;
-  }return obj;
-}
-
 function _toConsumableArray(arr) {
   if (Array.isArray(arr)) {
     for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) {
@@ -43,20 +49,3 @@ function _toConsumableArray(arr) {
 }
 
 var initialState = [];
-
-exports.default = (0, _reduxActions.handleActions)((_handleActions = {}, _defineProperty(_handleActions, Actions.ADD, function (state, _ref) {
-  var payload = _ref.payload;
-
-  var request = Object.assign(payload, {
-    filter: 'none',
-    id: state.reduce(function (maxId, ask) {
-      return Math.max(ask.id, maxId);
-    }, -1) + 1
-  });
-  return [].concat(_toConsumableArray(state), [request]);
-}), _defineProperty(_handleActions, Actions.DELETE, function (state, _ref2) {
-  var payload = _ref2.payload;
-  return state.filter(function (asks) {
-    return state[payload].id !== asks.id;
-  });
-}), _handleActions), initialState);
