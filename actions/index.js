@@ -25,31 +25,25 @@ export const rejected = () => ({
 export const accepted = () => ({
   type: Constants.ACCEPTED
 });
-
 export const edit = payload => ({
   type: Constants.EDIT,
   payload
 });
-
 export const deleteAsk = payload => ({
   type: Constants.DELETE,
   payload
 });
-
 export const deleteFromHistory = payload => ({
   type: Constants.DELETE_FROM_HISTORY,
   payload
 });
-
 export const clearHistory = () => ({
   type: Constants.CLEAR_HISTORY
 });
-
 export const addToHistory = payload => ({
   type: Constants.ADD_HISTORY,
   payload
 });
-
 export const clearScore = () => ({
   type: Constants.CLEAR_SCORE
 });

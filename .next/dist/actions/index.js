@@ -59,41 +59,35 @@ var accepted = exports.accepted = function accepted() {
     type: Constants.ACCEPTED
   };
 };
-
 var edit = exports.edit = function edit(payload) {
   return {
     type: Constants.EDIT,
     payload: payload
   };
 };
-
 var deleteAsk = exports.deleteAsk = function deleteAsk(payload) {
   return {
     type: Constants.DELETE,
     payload: payload
   };
 };
-
 var deleteFromHistory = exports.deleteFromHistory = function deleteFromHistory(payload) {
   return {
     type: Constants.DELETE_FROM_HISTORY,
     payload: payload
   };
 };
-
 var clearHistory = exports.clearHistory = function clearHistory() {
   return {
     type: Constants.CLEAR_HISTORY
   };
 };
-
 var addToHistory = exports.addToHistory = function addToHistory(payload) {
   return {
     type: Constants.ADD_HISTORY,
     payload: payload
   };
 };
-
 var clearScore = exports.clearScore = function clearScore() {
   return {
     type: Constants.CLEAR_SCORE
