@@ -35,13 +35,14 @@ function List(_ref) {
   var list = _ref.list,
       handleAnswer = _ref.handleAnswer;
 
-  return list.length > 0 ? _react2.default.createElement(_semanticUiReact.Container, null, _react2.default.createElement(_semanticUiReact.Segment, { padded: true }, list.map(function (ask, index) {
+  if (list.length <= 0) return _react2.default.createElement('div', null);
+  return _react2.default.createElement(_semanticUiReact.Container, null, _react2.default.createElement(_semanticUiReact.Segment, { padded: true }, list.map(function (ask, index) {
     return _react2.default.createElement(_semanticUiReact.Card, { raised: true, centered: true, key: ask.id }, _react2.default.createElement(_semanticUiReact.Card.Content, null, _react2.default.createElement(_semanticUiReact.Card.Header, null, 'You Asked : ', ask.asked.toUpperCase()), _react2.default.createElement(_semanticUiReact.Card.Meta, null), _react2.default.createElement(_semanticUiReact.Card.Description, null, 'For : ', ask.person)), _react2.default.createElement(_semanticUiReact.Card.Content, { extra: true }, _react2.default.createElement(_semanticUiReact.Button, {
       basic: true,
       color: 'red',
       fluid: true,
       onClick: function onClick(e) {
-        return handleAnswer(e, { value: ask, answer: Actions.rejected, index: index });
+        return handleAnswer({ value: ask, answer: Actions.rejected, index: index });
       }
     }, 'Rejected'), _react2.default.createElement(_semanticUiReact.Button, {
       basic: true,
@@ -51,5 +52,5 @@ function List(_ref) {
         return handleAnswer(e, { value: ask, answer: Actions.accepted, index: index });
       }
     }, 'Accepted')));
-  }))) : _react2.default.createElement('div', null);
+  })));
 }

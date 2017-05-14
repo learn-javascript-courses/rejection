@@ -9,8 +9,6 @@ var _cuid = require('cuid');
 
 var _cuid2 = _interopRequireDefault(_cuid);
 
-var _reduxActions = require('redux-actions');
-
 var _constants = require('../constants');
 
 var Constants = _interopRequireWildcard(_constants);

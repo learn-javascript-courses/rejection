@@ -27,6 +27,7 @@
     "next": "^2.3.0-alpha1",
     "next-redux-wrapper": "^1.1.2",
     "react": "^15.5.4",
+    "react-autobind": "^1.0.6",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",

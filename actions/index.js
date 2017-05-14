@@ -1,5 +1,4 @@
 import cuid from 'cuid';
-import { createAction } from 'redux-actions';
 import * as Constants from '../constants';
 
 export const add = (

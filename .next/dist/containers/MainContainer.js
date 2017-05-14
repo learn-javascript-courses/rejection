@@ -26,6 +26,10 @@ var _moment = require("moment");
 
 var _moment2 = _interopRequireDefault(_moment);
 
+var _reactAutobind = require("react-autobind");
+
+var _reactAutobind2 = _interopRequireDefault(_reactAutobind);
+
 var _semanticUiReact = require("semantic-ui-react");
 
 var _actions = require("../actions");
@@ -86,8 +90,7 @@ var Main = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this));
 
-    _this.handleSubmit = _this.handleSubmit.bind(_this);
-    _this.handleAnswer = _this.handleAnswer.bind(_this);
+    (0, _reactAutobind2.default)(_this);
     return _this;
   }
 
@@ -104,19 +107,18 @@ var Main = function (_Component) {
     }
   }, {
     key: 'handleAnswer',
-    value: function handleAnswer(event, _ref) {
+    value: function handleAnswer(_ref) {
       var value = _ref.value,
           answer = _ref.answer;
-
-      event.preventDefault();
       var _props$actions = this.props.actions,
           rejected = _props$actions.rejected,
           accepted = _props$actions.accepted,
           deleteAsk = _props$actions.deleteAsk,
           addToHistory = _props$actions.addToHistory;
 
-      if (answer().type === 'REJECTED') rejected();else accepted();
       var result = Object.assign(value, { result: answer().type });
+
+      if (answer().type === 'REJECTED') rejected();else accepted();
 
       addToHistory(result);
       deleteAsk(result.id);
@@ -146,12 +148,16 @@ var Main = function (_Component) {
   return Main;
 }(_react.Component);
 
-var mapStateToProps = function mapStateToProps(state) {
+var mapStateToProps = function mapStateToProps(_ref2) {
+  var list = _ref2.list,
+      points = _ref2.points,
+      history = _ref2.history,
+      form = _ref2.form;
   return {
-    list: state.list,
-    points: state.points,
-    history: state.history,
-    form: state.form
+    list: list,
+    points: points,
+    history: history,
+    form: form
   };
 };
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {

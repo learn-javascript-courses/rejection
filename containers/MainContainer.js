@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import moment from 'moment';
+import autoBind from 'react-autobind';
 import { Button, Grid, Segment, Container } from 'semantic-ui-react';
 import * as Actions from '../actions';
 import List from '../components/List';
@@ -11,20 +12,18 @@ import History from '../components/history';
 class Main extends Component {
   constructor() {
     super();
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleAnswer = this.handleAnswer.bind(this);
+    autoBind(this);
   }
   handleSubmit() {
     const { actions: { add }, form: { RejectionForm: { values: { asked, person } } } } = this.props;
     add(asked, person);
   }
-  handleAnswer(event, { value, answer }) {
-    event.preventDefault();
+  handleAnswer({ value, answer }) {
     const { rejected, accepted, deleteAsk, addToHistory } = this.props.actions;
+    const result = Object.assign(value, { result: answer().type });
 
     if (answer().type === 'REJECTED') rejected();
     else accepted();
-    const result = Object.assign(value, { result: answer().type });
 
     addToHistory(result);
     deleteAsk(result.id);
@@ -73,11 +72,11 @@ class Main extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  list: state.list,
-  points: state.points,
-  history: state.history,
-  form: state.form
+const mapStateToProps = ({ list, points, history, form }) => ({
+  list,
+  points,
+  history,
+  form
 });
 const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(Actions, dispatch) });
 
