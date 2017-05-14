@@ -18,7 +18,6 @@ const createAsk = (
   result,
   id
 });
-
 test('Should test Reducers', nest => {
   nest.test('Should test Points reducer', points => {
     points.test('Should increment state by 1 for accepted actions', t => {
@@ -85,7 +84,7 @@ test('Should test Reducers', nest => {
       t.same(actual, expected, msg);
       t.end();
     });
-    history.test('Should Delete from History', t => {
+    history.test('Should Delete specific ID from history', t => {
       const msg = 'Should remove a value from history based on ID';
       const expected = [];
       const ask = createAsk();

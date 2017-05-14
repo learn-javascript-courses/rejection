@@ -15,6 +15,10 @@ var _actions = require('../actions');
 
 var Actions = _interopRequireWildcard(_actions);
 
+var _listItems = require('./list-items');
+
+var _listItems2 = _interopRequireDefault(_listItems);
+
 function _interopRequireWildcard(obj) {
   if (obj && obj.__esModule) {
     return obj;
@@ -36,21 +40,5 @@ function List(_ref) {
       handleAnswer = _ref.handleAnswer;
 
   if (list.length <= 0) return _react2.default.createElement('div', null);
-  return _react2.default.createElement(_semanticUiReact.Container, null, _react2.default.createElement(_semanticUiReact.Segment, { padded: true }, list.map(function (ask, index) {
-    return _react2.default.createElement(_semanticUiReact.Card, { raised: true, centered: true, key: ask.id }, _react2.default.createElement(_semanticUiReact.Card.Content, null, _react2.default.createElement(_semanticUiReact.Card.Header, null, 'You Asked : ', ask.asked.toUpperCase()), _react2.default.createElement(_semanticUiReact.Card.Meta, null), _react2.default.createElement(_semanticUiReact.Card.Description, null, 'For : ', ask.person)), _react2.default.createElement(_semanticUiReact.Card.Content, { extra: true }, _react2.default.createElement(_semanticUiReact.Button, {
-      basic: true,
-      color: 'red',
-      fluid: true,
-      onClick: function onClick(e) {
-        return handleAnswer({ value: ask, answer: Actions.rejected, index: index });
-      }
-    }, 'Rejected'), _react2.default.createElement(_semanticUiReact.Button, {
-      basic: true,
-      color: 'green',
-      fluid: true,
-      onClick: function onClick(e) {
-        return handleAnswer({ value: ask, answer: Actions.accepted, index: index });
-      }
-    }, 'Accepted')));
-  })));
+  return _react2.default.createElement(_semanticUiReact.Container, null, _react2.default.createElement(_semanticUiReact.Segment, { padded: true }, _react2.default.createElement(_listItems2.default, { list: list, handleAnswer: handleAnswer })));
 }

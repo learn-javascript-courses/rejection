@@ -2,9 +2,10 @@ import React from 'react';
 import moment from 'moment';
 import { Segment, Card, Container, Button } from 'semantic-ui-react';
 
-export default ({ history, clearHistory, addToHistory, deleteFromHistory }) =>
-  history.length > 0
-    ? <Container fluid>
+export default ({ history, clearHistory, addToHistory, deleteFromHistory }) => {
+  if (history.length <= 0) return <div />;
+  return (
+    <Container fluid>
       <Segment>
         <Button compact floated={'right'} basic type={'button'} onClick={clearHistory}>
           {'Clear History'}
@@ -25,7 +26,8 @@ export default ({ history, clearHistory, addToHistory, deleteFromHistory }) =>
               {'Delete From History'}
             </Button>
           </Card>
-          ))}
+        ))}
       </Segment>
     </Container>
-    : <div />;
+  );
+};
