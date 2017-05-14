@@ -27,7 +27,7 @@ export default function List({ list, handleAnswer }) {
                 basic
                 color={'green'}
                 fluid
-                onClick={e => handleAnswer(e, { value: ask, answer: Actions.accepted, index })}
+                onClick={e => handleAnswer({ value: ask, answer: Actions.accepted, index })}
               >
                 Accepted
               </Button>

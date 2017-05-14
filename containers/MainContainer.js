@@ -20,10 +20,9 @@ class Main extends Component {
   }
   handleAnswer({ value, answer }) {
     const { rejected, accepted, deleteAsk, addToHistory } = this.props.actions;
-    const result = Object.assign(value, { result: answer().type });
-
     if (answer().type === 'REJECTED') rejected();
     else accepted();
+    const result = Object.assign(value, { result: answer().type });
 
     addToHistory(result);
     deleteAsk(result.id);

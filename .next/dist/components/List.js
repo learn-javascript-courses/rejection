@@ -49,7 +49,7 @@ function List(_ref) {
       color: 'green',
       fluid: true,
       onClick: function onClick(e) {
-        return handleAnswer(e, { value: ask, answer: Actions.accepted, index: index });
+        return handleAnswer({ value: ask, answer: Actions.accepted, index: index });
       }
     }, 'Accepted')));
   })));

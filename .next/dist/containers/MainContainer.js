@@ -116,9 +116,8 @@ var Main = function (_Component) {
           deleteAsk = _props$actions.deleteAsk,
           addToHistory = _props$actions.addToHistory;
 
-      var result = Object.assign(value, { result: answer().type });
-
       if (answer().type === 'REJECTED') rejected();else accepted();
+      var result = Object.assign(value, { result: answer().type });
 
       addToHistory(result);
       deleteAsk(result.id);
