@@ -14,7 +14,7 @@ class Main extends Component {
     super();
     autoBind(this);
   }
-  handleSubmit(e) {
+  handleSubmit() {
     const { actions: { add }, form: { RejectionForm: { values: { asked, person } } } } = this.props;
     add(asked, person);
   }
