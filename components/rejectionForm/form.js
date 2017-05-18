@@ -6,36 +6,32 @@ import FormComponent from './formComponent';
 export default function (props) {
   const { handleSubmit, reset, pristine, submitting, errors } = props;
   return (
-    <Form onSubmit={handleSubmit}>
-      <Field
-        name={'asked'}
-        type={'text'}
-        component={FormComponent}
-      />
-      <Field
-        name={'person'}
-        type={'text'}
-        component={FormComponent}
-      />
+    <Form>
+      <Field name={'asked'} type={'text'} component={FormComponent} />
+      <Field name={'person'} type={'text'} component={FormComponent} />
       <Button.Group>
+        <Button
+          positive
+          type={'submit'}
+          disabled={(pristine && errors === undefined) || (submitting && errors === undefined)}
+          onClick={e => {
+            e.preventDefault();
+            handleSubmit(e);
+            return reset('RejectionForm');
+          }}
+        >
+          Submit
+        </Button>
+        <Button.Or />
         <Button
           onClick={e => {
             e.preventDefault();
             return reset('RejectionForm');
           }}
-        >Cancel
+        >
+          Cancel
         </Button>
-        <Button.Or />
-        <Button
-          positive
-          type={'submit'}
-          disabled={pristine && errors === undefined || submitting && errors === undefined}
-          onClick={(e) => {
-            e.preventDefault();
-            handleSubmit();
-            return reset('RejectionForm');
-          }}
-        >Submit</Button>
+
       </Button.Group>
     </Form>
   );

@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="372e3f31-1e00-4867-9c53-09a255b6cbbf" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/bundles/pages/_document.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/bundles/pages/_error.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/bundles/pages/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/commons.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/dist/actions/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/dist/components/Head.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/dist/components/List.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/dist/components/history.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/dist/components/rejectionForm/form.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/dist/components/rejectionForm/formComponent.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/dist/components/rejectionForm/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/dist/constants/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/dist/containers/MainContainer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/dist/pages/_document.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/dist/pages/_error.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/dist/pages/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/dist/reducers/history.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/dist/reducers/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/dist/reducers/list.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/dist/reducers/points.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/dist/store/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/manifest.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -432,12 +410,12 @@
       <workItem from="1494074219291" duration="317000" />
       <workItem from="1494074733996" duration="810000" />
       <workItem from="1494076544022" duration="70000" />
-      <workItem from="1495071125530" duration="934000" />
+      <workItem from="1495071125530" duration="1523000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57859000" />
+    <option name="totallyTimeSpent" value="58448000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
