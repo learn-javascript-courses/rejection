@@ -11,7 +11,7 @@
     "lint": "eslint --cache --ignore-path .gitignore --ext .jsx,.js --format=node_modules/eslint-formatter-pretty .",
     "build": "next build",
     "start": "next start -p 8000",
-    "test": "clear; npm run -s lint ; babel-node src/**/*.spec.js | faucet ;",
+    "test": "clear; npm run -s lint ; tape -r babel-register src/**/*.spec.js | faucet ;",
     "watch": "watch 'npm run -s test && npm run -s lint' ./src"
   },
   "repository": {
