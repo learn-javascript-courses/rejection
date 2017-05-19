@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 import autoBind from 'react-autobind';
 import { Button, Grid, Segment, Container } from 'semantic-ui-react';
-import * as Actions from '../actions';
-import List from '../components/List';
-import RejectionForm from '../components/rejectionForm';
-import History from '../components/history';
+import * as Actions from './actions';
+import List from './list/list';
+import RejectionForm from './form';
+import History from './history/history';
+import Points from './points/points';
 
 class Main extends Component {
   constructor() {
@@ -55,14 +56,7 @@ class Main extends Component {
             />
           </Grid.Column>
           <Grid.Row>
-            <Container textAlign={'center'}>
-              <Segment padded>
-                <div>Points {points}</div>
-                <Button type={'submit'} onClick={clearScore}>
-                  {'Clear Score'}
-                </Button>
-              </Segment>
-            </Container>
+            <Points clearScore={clearScore} points={points} />
           </Grid.Row>
         </Grid>
 

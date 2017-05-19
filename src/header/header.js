@@ -2,9 +2,8 @@ import React from 'react';
 
 export default function Header() {
   return (
-    <div>
-      <span>Rejection App</span>
+    <div className="header-title">
+      Rejection App
     </div>
   );
 }
-
