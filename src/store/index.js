@@ -1,9 +1,13 @@
+import createSagaMiddleware from 'redux-saga';
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
+import 'regenerator-runtime/runtime';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { reducer as formReducer } from 'redux-form';
 import points from '../points/points-reducer';
 import list from '../list/list-reducer';
 import history from '../history/history-reducer';
+import rootSaga from '../sagas/root';
+import configureFirebase from '../lib/firebase';
 
 const rootReducer = combineReducers({
   list,
@@ -11,18 +15,19 @@ const rootReducer = combineReducers({
   history,
   form: formReducer
 });
-const middleware = [];
-const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__(
-    {
-        // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
-    }
-    )
-  : compose;
 
-const enhancer = composeEnhancers(
-  applyMiddleware(...middleware)
-  // other store enhancers if any
+const sagas = createSagaMiddleware();
+
+const enhancer = compose(
+  applyMiddleware(sagas),
+  typeof window !== 'undefined' && process.env.NODE_ENV !== 'production'
+    ? window.devToolsExtension && window.devToolsExtension()
+    : f => f
 );
 
-export default initialState => createStore(rootReducer, initialState, enhancer);
+export default initialState => {
+  const store = createStore(rootReducer, initialState, enhancer);
+  configureFirebase();
+  sagas.run(rootSaga);
+  return store;
+};

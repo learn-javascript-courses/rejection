@@ -3,8 +3,7 @@ import React from 'react';
 import ReactDom from 'react-dom/server';
 import dom from 'cheerio';
 import points from './points';
-import pointsReducer from './points-reducer';
-import * as Actions from '../actions';
+import pointsReducer, * as Actions from './points-reducer';
 
 const render = ReactDom.renderToStaticMarkup;
 
@@ -54,6 +53,13 @@ test('Should test Points reducer', nest => {
     const expected = 'Points 0';
 
     t.same(actual, expected, 'should have a points total');
+    t.end();
+  });
+  nest.test('Should create a rejected action object', t => {
+    const expected = { type: 'REJECTED' };
+    const actual = Actions.rejected();
+
+    t.same(actual, expected, 'Should have just a type of rejected');
     t.end();
   });
 });

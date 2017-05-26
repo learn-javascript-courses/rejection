@@ -5,22 +5,13 @@ import test from 'tape';
 import cuid from 'cuid';
 import moment from 'moment';
 import list from './list-items';
-import listReducer from './list-reducer';
-import * as Actions from '../actions/index';
+import listReducer, * as Actions from './list-reducer';
 
 const render = ReactDom.renderToStaticMarkup;
 
-const createAsk = (
-  asked = '',
-  person = '',
-  time = Date.now(),
-  result = undefined,
-  id = cuid()
-) => ({
+const createAsk = (asked = '', person = '', id = cuid()) => ({
   asked,
   person,
-  time,
-  result,
   id
 });
 const createList = (asked = 'For Money', person = 'Mom') => [
@@ -32,7 +23,7 @@ const createList = (asked = 'For Money', person = 'Mom') => [
 
 test('Should test the list component', nest => {
   nest.test('Should Render Nothing for empty list array', t => {
-    const el = list();
+    const el = list(() => {}, []);
     const $ = dom.load(render(el));
     const actual = $('.list-items').html();
     const expected = '';
@@ -99,6 +90,50 @@ test('Should test the list component', nest => {
     const expected = [dontRemove];
 
     t.same(actual, expected, 'Should remove item');
+    t.end();
+  });
+  nest.test('should create an add action object', t => {
+    const action = createAsk();
+    const expected = {
+      type: 'ADD',
+      payload: action
+    };
+    const actual = Actions.add(action);
+
+    t.same(actual, expected, 'Should accept arguments');
+    t.end();
+  });
+  nest.test('Should create an edit action object', t => {
+    const { id } = createAsk();
+    const expected = { type: 'EDIT', payload: id };
+    const actual = Actions.edit(id);
+
+    t.same(actual, expected, 'Should have a payload for edit');
+    t.end();
+  });
+  nest.test('Should create a delete ask action object', t => {
+    const payload = cuid();
+    const expected = {
+      type: 'DELETE',
+      payload
+    };
+    const actual = Actions.deleteAsk(payload);
+
+    t.same(actual, expected, 'Should create a delete object with an id as payload');
+    t.end();
+  });
+  nest.test('Should test the list selector', t => {
+    const ask1 = createAsk();
+    const ask2 = createAsk();
+    const state = {
+      points: 0,
+      history: [],
+      list: [ask1, ask2]
+    };
+    const actual = Actions.getList(state);
+    const expected = [ask1, ask2];
+
+    t.same(actual, expected, 'should return the correct slice of state');
     t.end();
   });
 });
