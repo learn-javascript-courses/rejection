@@ -34,19 +34,27 @@ export const saveAnsweredAsk = (id, asked, person, time, result, uid = 1) => {
       result
     })
     .then(() => removeAskFromList())
-    .catch(err => console.warn(err));
+    .catch(err => {
+      throw err;
+    });
 };
-
+export const clearHistoryFromDb = (uid = 1) => {
+  database().ref(`/${uid}/history/`).remove();
+};
+export const deleteSpecificHistoryItem = (id, uid = 1) => {
+  database().ref(`/${uid}/history/${id}`).remove();
+};
 // points functions
 export const savePoints = (points, uid = 1) => {
-  console.log('saving points');
-  database().ref(`/${uid}/points`).set({
-    points
-  });
+  database().ref(`/${uid}/points`).update({ points });
 };
 export const fetchPoints = (uid = 1) => {
   database().ref(`/${uid}/points`);
 };
-
+export const clearScoreFromDB = (uid = 1) => {
+  database().ref(`/${uid}/points`).remove();
+};
 // error
-export const errorSavingPoints = error => console.log(`error saving points ${error}`);
+export const errorSavingPoints = error => {
+  throw error;
+};

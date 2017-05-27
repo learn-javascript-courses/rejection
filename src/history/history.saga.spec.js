@@ -47,4 +47,43 @@ test('Should test the history saga', nest => {
     t.same(actual, expected, 'should create the error object');
     t.end();
   });
+  nest.test('Should test the clear history from db action creator', t => {
+    const uid = 1;
+    const actual = history.createClearHistoryFromDb(uid);
+    const expected = {
+      type: 'CLEAR_HISTORY_FROM_DB',
+      uid
+    };
+
+    t.same(actual, expected, 'should return just a clear history obj with type');
+    t.end();
+  });
+  nest.test('Should test the callClearHistory saga worker', t => {
+    const uid = 1;
+    const gen = history.callClearHistoryFromDb({ uid });
+    const actual = gen.next().value;
+    const expected = call(db.clearHistoryFromDb, uid);
+
+    t.same(actual, expected, 'should call the db to clear history');
+    t.end();
+  });
+  nest.test('Should test the createDeleteSpecificItemFromHistory', t => {
+    const expected = {
+      type: 'DELETE_SPECIFIC_ITEM_FROM_HISTORY',
+      id: 1,
+      uid: 1
+    };
+    const actual = history.createDeleteSpecificItemFromHistory(1);
+
+    t.same(actual, expected, 'should create an action object with an id to delete');
+    t.end();
+  });
+  nest.test('Should test the callDeleteSpecificItemFromHistory', t => {
+    const gen = history.callDeleteSpecificItemFromHistory({ id: 1, uid: 1 });
+    const actual = gen.next().value;
+    const expected = call(db.deleteSpecificHistoryItem, 1, 1);
+
+    t.same(actual, expected, 'should call the db to clear history');
+    t.end();
+  });
 });

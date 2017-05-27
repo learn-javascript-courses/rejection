@@ -20,10 +20,9 @@ test('Should test points saga', nest => {
     const uid = cuid();
     const expected = {
       type: 'SAVE_POINTS',
-      uid,
       points: 0
     };
-    const actual = saga.createSavePoints({ uid, points: 0 });
+    const actual = saga.createSavePoints(0);
 
     t.same(actual, expected, 'should create a save points action object');
     t.end();
@@ -40,8 +39,8 @@ test('Should test points saga', nest => {
     t.end();
   });
   nest.test('Should test the callSavePoints saga', t => {
-    const expected = call(db.savePoints, 1, 0);
-    const gen = saga.callSavePoints({ id: 1, points: 0 });
+    const expected = call(db.savePoints, 0);
+    const gen = saga.callSavePoints({ points: 0 });
     const actual = gen.next().value;
 
     t.same(actual, expected, 'should save points to db');
@@ -54,6 +53,23 @@ test('Should test points saga', nest => {
     const actual = gen.next().value;
 
     t.same(actual, expected, 'Should fetch points from the db');
+    t.end();
+  });
+  nest.test('Should create the createClearScore action creator', t => {
+    const actual = saga.createClearScore();
+    const expected = {
+      type: 'CLEAR_SCORE_FROM_DB'
+    };
+
+    t.same(actual, expected, 'should create an action object with just a type');
+    t.end();
+  });
+  nest.test('should test calling clear score', t => {
+    const gen = saga.callClearScore();
+    const actual = gen.next().value;
+    const expected = call(db.clearScoreFromDB);
+
+    t.same(actual, expected, 'should clear the score from the db');
     t.end();
   });
 });

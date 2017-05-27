@@ -36,7 +36,8 @@ export default ({ history = [], clearHistory, addToHistory, deleteFromHistory } 
               basic
               type={'button'}
               color={item.result === 'REJECTED' ? 'red' : 'green'}
-              onClick={() => deleteFromHistory(item.id)}
+              onClick={deleteFromHistory}
+              data={item}
             >
               {'Delete From History'}
             </Button>

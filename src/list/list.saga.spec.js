@@ -4,10 +4,10 @@ import { takeEvery, put, call } from 'redux-saga/effects';
 import * as listSaga from './list.saga';
 import * as db from '../lib/database';
 
-const createAsk = ({ id = cuid(), person = 'Me', ask = 'I am asking for something' } = {}) => ({
+const createAsk = ({ id = cuid(), person = 'Me', asked = 'I am asking for something' } = {}) => ({
   id,
   person,
-  ask
+  asked
 });
 test('Should test the list sagas', nest => {
   nest.test('Should test the createSaveAsk action object', t => {
@@ -69,9 +69,9 @@ test('Should test the list sagas', nest => {
     t.end();
   });
   nest.test('Should test the callSaveAsk worker', t => {
-    const { id, ask, person } = createAsk();
-    const expected = call(db.saveAskToDb, id, ask, person);
-    const gen = listSaga.callSaveAskToDb({ id, ask, person });
+    const { id, asked, person } = createAsk();
+    const expected = call(db.saveAskToDb, id, asked, person);
+    const gen = listSaga.callSaveAskToDb({ id, asked, person });
     const actual = gen.next().value;
 
     t.same(actual, expected, 'should test the call saveAskToDB Worker');

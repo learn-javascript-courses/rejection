@@ -41,8 +41,8 @@ class Main extends Component {
     this.props.actions.historyRejected(id);
     this.props.actions.deleteAsk(id); // remove item from list
     this.props.actions.createSaveAskToHistory({ id, asked, person, result });
-    this.savePoints();
     this.props.actions.createDeleteAskFromFirebaseList(id);
+    this.savePoints();
   }
   handleAccepted(event, props) {
     const { id, asked, person, result } = props.data;
@@ -51,23 +51,26 @@ class Main extends Component {
     this.props.actions.historyAccepted(id);
     this.props.actions.deleteAsk(id); // remove item from list
     this.props.actions.createSaveAskToHistory({ id, asked, person, result });
-    this.savePoints();
     this.props.actions.createDeleteAskFromFirebaseList(id);
+    this.savePoints();
   }
   savePoints() {
-    console.log(this.props.points);
-    this.props.actions.createSavePoints({
-      points: this.props.points,
-      id: 1 // user id will be here
-    });
+    this.props.actions.createSavePoints(this.props.points);
+  }
+  clearScore() {
+    this.props.actions.clearScore();
+    this.props.actions.createClearScore();
+  }
+  clearHistory() {
+    this.props.actions.clearHistory();
+    this.props.actions.createClearHistoryFromDb();
+  }
+  deleteFromHistory(event, { data }) {
+    this.props.actions.deleteFromHistory(data.id);
+    this.props.actions.createDeleteSpecificItemFromHistory(data.id);
   }
   render() {
-    const {
-      list,
-      points,
-      history,
-      actions: { addToHistory, clearHistory, deleteFromHistory, clearScore }
-    } = this.props;
+    const { list, points, history, actions: { addToHistory, clearHistory } } = this.props;
     return (
       <div>
         <Container textAlign={'center'}>
@@ -88,12 +91,12 @@ class Main extends Component {
             <History
               history={history}
               addToHistory={addToHistory}
-              clearHistory={clearHistory}
-              deleteFromHistory={deleteFromHistory}
+              clearHistory={this.clearHistory}
+              deleteFromHistory={this.deleteFromHistory}
             />
           </Grid.Column>
           <Grid.Row>
-            <Points clearScore={clearScore} points={points} savePoints={this.savePoints} />
+            <Points clearScore={this.clearScore} points={points} savePoints={this.savePoints} />
           </Grid.Row>
         </Grid>
 
