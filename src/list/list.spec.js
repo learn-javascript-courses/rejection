@@ -8,16 +8,31 @@ import list from './list-items';
 import listReducer, * as Actions from './list-reducer';
 
 const render = ReactDom.renderToStaticMarkup;
+export const HISTORYREJECTED = 'HISTORYREJECTED';
+export const HISTORYACCEPTED = 'HISTORYACCEPTED';
+export const ADD_HISTORY = 'ADD_HISTORY';
+export const CLEAR_HISTORY = 'CLEAR_HISTORY';
 
-const createAsk = (asked = '', person = '', id = cuid()) => ({
+const createHistory = (
+  { asked = 'Mom', person = 'Ryan', id = cuid(), result = 'REJECTED' } = {}
+) => ({
   asked,
   person,
+  result,
   id
+});
+
+const createAsk = ({ asked = '', person = '', result = undefined, id = cuid() } = {}) => ({
+  asked,
+  person,
+  id,
+  result
 });
 const createList = (asked = 'For Money', person = 'Mom') => [
   {
     asked,
-    person
+    person,
+    result: undefined
   }
 ];
 
@@ -71,55 +86,50 @@ test('Should test the list component', nest => {
     t.same(actual, expected, 'Should render an accepted button');
     t.end();
   });
-  nest.test('Should add to the list', t => {
-    const state = [];
-    const ask = Actions.add();
-    const expected = [ask.payload];
-    const actual = listReducer(state, ask);
-    const msg = 'Should add to the list';
+});
 
-    t.same(actual, expected, msg);
+test('Should unit test the action object and the reducer', nest => {
+  nest.test('should create an add action object', t => {
+    const createAskAction = createAsk();
+    const expected = {
+      type: 'ADD',
+      payload: createAskAction
+    };
+    const actual = Actions.addAsk(createAskAction);
+
+    t.same(actual, expected, 'should create an add Ask action object');
+    t.end();
+  });
+  nest.test('Should add to the list', t => {
+    const addAsk = createAsk();
+    const state = {};
+    state[addAsk.id] = addAsk;
+    const expected = state;
+    const action = Actions.addAsk(addAsk);
+    const actual = listReducer(state, action);
+
+    t.same(actual, expected, 'should add an ask to the list state');
+    t.end();
+  });
+  nest.test('should create a removeAsk action object', t => {
+    const ask = createAsk();
+    const expected = {
+      type: 'DELETE',
+      id: ask.id
+    };
+    const actual = Actions.deleteAsk(ask.id);
+    t.same(actual, expected, 'should create  a delete action object');
     t.end();
   });
   nest.test('Should remove from the list', t => {
-    const remove = createAsk();
-    const dontRemove = createAsk();
-    const state = [dontRemove, remove];
-    const action = Actions.deleteAsk(remove.id);
+    const addAsk = createAsk();
+    const state = {};
+    state[addAsk.id] = addAsk;
+    const expected = {};
+    const action = Actions.deleteAsk(addAsk.id);
     const actual = listReducer(state, action);
-    const expected = [dontRemove];
 
-    t.same(actual, expected, 'Should remove item');
-    t.end();
-  });
-  nest.test('should create an add action object', t => {
-    const action = createAsk();
-    const expected = {
-      type: 'ADD',
-      payload: action
-    };
-    const actual = Actions.add(action);
-
-    t.same(actual, expected, 'Should accept arguments');
-    t.end();
-  });
-  nest.test('Should create an edit action object', t => {
-    const { id } = createAsk();
-    const expected = { type: 'EDIT', payload: id };
-    const actual = Actions.edit(id);
-
-    t.same(actual, expected, 'Should have a payload for edit');
-    t.end();
-  });
-  nest.test('Should create a delete ask action object', t => {
-    const payload = cuid();
-    const expected = {
-      type: 'DELETE',
-      payload
-    };
-    const actual = Actions.deleteAsk(payload);
-
-    t.same(actual, expected, 'Should create a delete object with an id as payload');
+    t.same(actual, expected, 'should remove an add with a specific id from the list');
     t.end();
   });
   nest.test('Should test the list selector', t => {
@@ -128,12 +138,68 @@ test('Should test the list component', nest => {
     const state = {
       points: 0,
       history: [],
-      list: [ask1, ask2]
+      list: {
+        [ask1.id]: ask1,
+        [ask2.id]: ask2
+      }
     };
     const actual = Actions.getList(state);
-    const expected = [ask1, ask2];
+    const expected = {
+      [ask1.id]: ask1,
+      [ask2.id]: ask2
+    };
 
     t.same(actual, expected, 'should return the correct slice of state');
+    t.end();
+  });
+  nest.test('Should answer create an answered ask action object', t => {
+    const id = cuid();
+    const expected = {
+      type: 'ANSWER_ASK',
+      id,
+      result: 'REJECTED'
+    };
+    const actual = Actions.answerAsk({ id, result: 'REJECTED' });
+
+    t.same(actual, expected, 'should update the state');
+    t.end();
+  });
+  nest.test('Should update the list state based on the id and the answer', t => {
+    const ask1 = createAsk();
+    const ask2 = createAsk();
+    const state = {
+      points: 0,
+      history: {},
+      list: {
+        [ask1.id]: ask1,
+        [ask2.id]: ask2
+      }
+    };
+    const expected = {
+      [ask1.id]: { ...ask1, result: 'REJECTED' },
+      [ask2.id]: ask2
+    };
+
+    const action = Actions.answerAsk({ id: ask1.id, result: 'REJECTED' });
+    const actual = listReducer(state.list, action);
+
+    t.same(actual, expected, 'should test answer ask case');
+    t.end();
+  });
+  nest.test('should create a clear history action object', t => {
+    const actual = Actions.createClearHistory();
+    const expected = { type: 'CLEAR_HISTORY' };
+
+    t.same(actual, expected, 'should create the clear history action object');
+    t.end();
+  });
+  nest.test('Should create a clear history state', t => {
+    const action = Actions.createClearHistory();
+    const state = [createHistory()];
+    const expected = [];
+    const actual = listReducer(state, action);
+
+    t.same(actual, expected, 'should clear the history');
     t.end();
   });
 });

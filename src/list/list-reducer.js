@@ -1,40 +1,70 @@
 import cuid from 'cuid';
 
 // constants
-const ADD = 'ADD';
-const DELETE = 'DELETE';
-const EDIT = 'EDIT';
+export const ADD = 'ADD';
+export const DELETE = 'DELETE';
+export const ANSWER_ASK = 'ANSWER_ASK';
+const CLEAR_HISTORY = 'CLEAR_HISTORY';
 
 // action creators
-export const add = ({ asked = '', person = '', id = cuid() } = {}) => ({
+export const addAsk = ({ asked = '', person = '', result = undefined, id = cuid() } = {}) => ({
   type: ADD,
   payload: {
     asked,
     person,
-    id
+    id,
+    result
   }
-});
-
-export const edit = id => ({
-  type: EDIT,
-  payload: id
 });
 export const deleteAsk = id => ({
   type: DELETE,
-  payload: id
+  id
 });
-
+export const createClearHistory = () => ({
+  type: CLEAR_HISTORY
+});
+export const answerAsk = ({ id, result = undefined } = {}) => ({
+  id,
+  result,
+  type: 'ANSWER_ASK'
+});
 // selector
-export const getList = state => state.list.map(({ person, asked, id }) => ({ person, asked, id }));
-
+export const getList = ({ list }) => {
+  const unAnsweredAsks = Object.keys(list).filter(item => list[item].result === undefined);
+  const listSelector = {};
+  unAnsweredAsks.forEach(id => (listSelector[id] = list[id]));
+  return listSelector;
+};
+export const getHistory = ({ list }) => {
+  const unAnsweredAsks = Object.keys(list).filter(item => list[item].result !== undefined);
+  const historySelector = {};
+  unAnsweredAsks.forEach(id => (historySelector[id] = list[id]));
+  return historySelector;
+};
+export const getPoints = ({ list }) =>
+  Object.keys(list).reduce(
+    (score, id) =>
+      list[id].result === 'REJECTED'
+        ? score + 10
+        : list[id].result === 'ACCEPTED' ? score + 1 : score,
+    0
+  );
 // reducer
-const initialState = [];
-export default function (state = initialState, { type, payload }) {
+const initialState = {};
+export default function (state = initialState, { type, payload, id, result }) {
   switch (type) {
     case ADD:
-      return [...state, payload];
-    case DELETE:
-      return state.filter(asks => payload !== asks.id);
+      return { ...state, [payload.id]: payload };
+    case ANSWER_ASK: {
+      return { ...state, [id]: { ...state[id], result } };
+    }
+    case DELETE: {
+      const newState = { ...state };
+      delete newState[id];
+      return newState;
+    }
+    case CLEAR_HISTORY:
+      return {};
     default:
       return state;
   }

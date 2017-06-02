@@ -3,76 +3,50 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import autoBind from 'react-autobind';
+import Router from 'next/router';
 import { Button, Grid, Segment, Container } from 'semantic-ui-react';
-import * as historyActions from './history/history-reducer';
 import * as listActions from './list/list-reducer';
-import * as pointsActions from './points/points-reducer';
 import List from './list/list';
 import RejectionForm from './form';
-import History from './history/history';
 import Points from './points/points';
-import * as pointsSagaActions from './points/points.saga';
-import * as historySagaActions from './history/history.saga';
 import * as listSagaActions from './list/list.saga';
+import History from './history/history';
+import Nav from './navbar/navbar';
+import { isAuthedCheck } from './Login/loginReducer';
 
 class Main extends Component {
   constructor() {
     super();
     autoBind(this);
   }
-  componentWillMount() {
-    // need uid for these
-    // this.props.actions.fetchPoints();
-    // this.props.actions.fetchAskList();
-    // this.props.actions.fetchHistoryList();
-  }
   handleSubmit() {
     const {
-      actions: { add, createSaveAsk },
+      actions: { addAsk, createSaveAsk },
       form: { RejectionForm: { values: { asked, person } } }
     } = this.props;
-    const newAsk = add({ asked, person });
-    createSaveAsk(newAsk.payload);
+    addAsk({ asked, person });
   }
-  handleRejected(event, props) {
-    const { id, asked, person, result } = props.data;
-    this.props.actions.rejected(id);
-    this.props.actions.addToHistory(props.data); // add item to history
-    this.props.actions.historyRejected(id);
-    this.props.actions.deleteAsk(id); // remove item from list
-    this.props.actions.createSaveAskToHistory({ id, asked, person, result });
-    this.props.actions.createDeleteAskFromFirebaseList(id);
-    this.savePoints();
+  deleteAsk(event, { data }) {
+    this.props.actions.deleteAsk(data.id);
   }
-  handleAccepted(event, props) {
-    const { id, asked, person, result } = props.data;
-    this.props.actions.accepted(id);
-    this.props.actions.addToHistory(props.data); // add item to history
-    this.props.actions.historyAccepted(id);
-    this.props.actions.deleteAsk(id); // remove item from list
-    this.props.actions.createSaveAskToHistory({ id, asked, person, result });
-    this.props.actions.createDeleteAskFromFirebaseList(id);
-    this.savePoints();
+  handleRejected(event, { data }) {
+    // dispatch single action here
+    this.props.actions.addAsk(data); // save ask to db and save ask in list
   }
-  savePoints() {
-    this.props.actions.createSavePoints(this.props.points);
-  }
-  clearScore() {
-    this.props.actions.clearScore();
-    this.props.actions.createClearScore();
-  }
-  clearHistory() {
-    this.props.actions.clearHistory();
-    this.props.actions.createClearHistoryFromDb();
-  }
-  deleteFromHistory(event, { data }) {
-    this.props.actions.deleteFromHistory(data.id);
-    this.props.actions.createDeleteSpecificItemFromHistory(data.id);
+  handleAccepted(event, { data }) {
+    // dispatch single action here
+    this.props.actions.addAsk(data);
   }
   render() {
-    const { list, points, history, actions: { addToHistory, clearHistory } } = this.props;
+    const {
+      list,
+      points,
+      history,
+      actions: { createClearHistory, deleteAsk, clearScore }
+    } = this.props;
     return (
       <div>
+        <Nav />
         <Container textAlign={'center'}>
           <h1>{'Rejection Game'}</h1>
         </Container>
@@ -90,13 +64,12 @@ class Main extends Component {
           <Grid.Column>
             <History
               history={history}
-              addToHistory={addToHistory}
-              clearHistory={this.clearHistory}
-              deleteFromHistory={this.deleteFromHistory}
+              clearHistory={createClearHistory}
+              deleteAsk={this.deleteAsk}
             />
           </Grid.Column>
           <Grid.Row>
-            <Points clearScore={this.clearScore} points={points} savePoints={this.savePoints} />
+            <Points clearScore={clearScore} points={points} savePoints={this.savePoints} />
           </Grid.Row>
         </Grid>
 
@@ -107,18 +80,14 @@ class Main extends Component {
 
 const mapStateToProps = state => ({
   list: listActions.getList(state),
-  points: state.points,
-  history: historyActions.getHistory(state),
+  history: listActions.getHistory(state),
+  points: listActions.getPoints(state),
   form: state.form
 });
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(
     {
       ...listActions,
-      ...pointsActions,
-      ...historyActions,
-      ...pointsSagaActions,
-      ...historySagaActions,
       ...listSagaActions
     },
     dispatch

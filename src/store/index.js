@@ -3,16 +3,14 @@ import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import 'regenerator-runtime/runtime';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { reducer as formReducer } from 'redux-form';
-import points from '../points/points-reducer';
 import list from '../list/list-reducer';
-import history from '../history/history-reducer';
 import rootSaga from '../sagas/root';
 import configureFirebase from '../lib/firebase';
+import login from '../Login/loginReducer';
 
 const rootReducer = combineReducers({
+  login,
   list,
-  points,
-  history,
   form: formReducer
 });
 
