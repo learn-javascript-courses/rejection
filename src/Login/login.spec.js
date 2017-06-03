@@ -6,8 +6,10 @@ test('Should test the Login Case', nest => {
     const state = {
       list: {},
       points: 0,
-      isFetching: false,
-      isLoggedIn: false
+      login: {
+        isFetching: false,
+        isLoggedIn: false
+      }
     };
     const expected = {
       isFetching: false,

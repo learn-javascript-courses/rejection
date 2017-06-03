@@ -7,17 +7,6 @@ export default ({ history = [], clearHistory, addToHistory, deleteAsk } = {}) =>
   return (
     <Container fluid>
       <Segment>
-        <Button
-          className="clear-history"
-          compact
-          floated={'right'}
-          basic
-          type={'button'}
-          onClick={clearHistory}
-        >
-          {'Clear History'}
-        </Button>
-        <br />
         {Object.keys(history).map(id => (
           <Card
             className="history-result"

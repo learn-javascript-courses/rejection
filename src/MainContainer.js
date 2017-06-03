@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import moment from 'moment';
+import { Link } from 'next/link';
 import autoBind from 'react-autobind';
 import Router from 'next/router';
-import { Button, Grid, Segment, Container } from 'semantic-ui-react';
+import { Button, Grid, Segment, Container, Message } from 'semantic-ui-react';
 import * as listActions from './list/list-reducer';
 import List from './list/list';
 import RejectionForm from './form';
@@ -13,21 +14,29 @@ import * as listSagaActions from './list/list.saga';
 import History from './history/history';
 import Nav from './navbar/navbar';
 import { isAuthedCheck } from './Login/loginReducer';
+import Login from './Login/Login';
 
 class Main extends Component {
   constructor() {
     super();
     autoBind(this);
   }
+  componentDidUpdate() {
+    if (this.props.uid) {
+      this.props.actions.fetchData(this.props.uid);
+    }
+  }
   handleSubmit() {
     const {
+      uid,
       actions: { addAsk, createSaveAsk },
       form: { RejectionForm: { values: { asked, person } } }
     } = this.props;
-    addAsk({ asked, person });
+    addAsk({ asked, person, uid });
   }
   deleteAsk(event, { data }) {
-    this.props.actions.deleteAsk(data.id);
+    const { uid } = this.props;
+    this.props.actions.deleteAsk(data.id, uid);
   }
   handleRejected(event, { data }) {
     // dispatch single action here
@@ -38,12 +47,12 @@ class Main extends Component {
     this.props.actions.addAsk(data);
   }
   render() {
-    const {
-      list,
-      points,
-      history,
-      actions: { createClearHistory, deleteAsk, clearScore }
-    } = this.props;
+    if (!this.props.isLoggedIn) {
+      return <Login />;
+    }
+    const { list, points, history, actions: { deleteAsk, clearScore } } = this.props;
+
+    if (!this.props.isLoggedIn) return Router.redirect('/login');
     return (
       <div>
         <Nav />
@@ -62,11 +71,7 @@ class Main extends Component {
             />
           </Grid.Column>
           <Grid.Column>
-            <History
-              history={history}
-              clearHistory={createClearHistory}
-              deleteAsk={this.deleteAsk}
-            />
+            <History history={history} deleteAsk={this.deleteAsk} />
           </Grid.Column>
           <Grid.Row>
             <Points clearScore={clearScore} points={points} savePoints={this.savePoints} />
@@ -82,7 +87,9 @@ const mapStateToProps = state => ({
   list: listActions.getList(state),
   history: listActions.getHistory(state),
   points: listActions.getPoints(state),
-  form: state.form
+  form: state.form,
+  isLoggedIn: state.login.isLoggedIn,
+  uid: listActions.getUID(state)
 });
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(

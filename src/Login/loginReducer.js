@@ -15,8 +15,10 @@ export const loginFailed = error => ({
   type: LOGIN_FAILED,
   error
 });
-
-export const loginSelector = ({ isFetching = false, isLoggedIn = false } = {}) => ({
+export const startLogin = () => ({
+  type: 'START_LOGIN'
+});
+export const loginSelector = ({ login: { isFetching = false, isLoggedIn = false } } = {}) => ({
   isFetching,
   isLoggedIn
 });

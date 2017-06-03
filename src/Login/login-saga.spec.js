@@ -8,13 +8,12 @@ import * as actions from './loginReducer';
 test('Should test the list sagas', nest => {
   nest.test('Should test the facebookLogin saga', t => {
     const action = actions.isFetchingLogin();
-    const expected = call(facebookSignIn);
+    const expected = put(actions.isFetchingLogin());
     const gen = login.callFacebookLogin(action);
     const actual = gen.next().value;
 
     t.same(actual, expected, 'should be deeply equal');
-    const fakeData = 1;
-    t.same(gen.next(fakeData).value, put(actions.loginSuccess(fakeData)));
+    t.same(gen.next().value, call(facebookSignIn));
     t.end();
   });
 });

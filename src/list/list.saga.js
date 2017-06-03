@@ -1,4 +1,4 @@
-import { all, takeEvery, call, fork, put } from 'redux-saga/effects';
+import { all, take, takeEvery, takeLatest, call, fork, put } from 'redux-saga/effects';
 import * as Actions from './list-reducer';
 import { removeAskFromDb, saveAskToDb, fetchAskList } from '../lib/database';
 
@@ -17,7 +17,22 @@ export function* watchDeleteAsk() {
     yield error;
   }
 }
+export function* watchFetchData() {
+  try {
+    yield takeLatest(Actions.fetchData, callFetchData);
+  } catch (error) {
+    yield error;
+  }
+}
 // worker sagas
+export function* callFetchData(action) {
+  try {
+    const data = yield call(fetchAskList, action.uid);
+    yield;
+  } catch (error) {
+    yield error;
+  }
+}
 export function* callSaveAsk(action) {
   try {
     yield call(saveAskToDb, action.payload);
@@ -33,5 +48,5 @@ export function* callRemoveAsk(action) {
   }
 }
 export default function*() {
-  yield [fork(watchSaveAsk), fork(watchDeleteAsk)];
+  yield [fork(watchSaveAsk), fork(watchDeleteAsk), fork(watchFetchData)];
 }

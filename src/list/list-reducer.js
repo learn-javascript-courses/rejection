@@ -4,30 +4,37 @@ import cuid from 'cuid';
 export const ADD = 'ADD';
 export const DELETE = 'DELETE';
 export const ANSWER_ASK = 'ANSWER_ASK';
-const CLEAR_HISTORY = 'CLEAR_HISTORY';
+export const FETCH_DATA = 'FETCH_DATA';
 
 // action creators
-export const addAsk = ({ asked = '', person = '', result = undefined, id = cuid() } = {}) => ({
+export const addAsk = (
+  { asked = '', person = '', result = undefined, id = cuid(), uid = 1 } = {}
+) => ({
   type: ADD,
   payload: {
     asked,
     person,
     id,
-    result
+    result,
+    uid
   }
 });
-export const deleteAsk = id => ({
+export const deleteAsk = (id, uid) => ({
   type: DELETE,
-  id
+  id,
+  uid
 });
-export const createClearHistory = () => ({
-  type: CLEAR_HISTORY
-});
-export const answerAsk = ({ id, result = undefined } = {}) => ({
+export const answerAsk = ({ id, result = undefined, uid } = {}) => ({
   id,
   result,
-  type: 'ANSWER_ASK'
+  type: 'ANSWER_ASK',
+  uid
 });
+export const fetchData = uid => ({
+  type: FETCH_DATA,
+  uid
+});
+
 // selector
 export const getList = ({ list }) => {
   const unAnsweredAsks = Object.keys(list).filter(item => list[item].result === undefined);
@@ -49,6 +56,7 @@ export const getPoints = ({ list }) =>
         : list[id].result === 'ACCEPTED' ? score + 1 : score,
     0
   );
+export const getUID = ({ login }) => login.uid;
 // reducer
 const initialState = {};
 export default function (state = initialState, { type, payload, id, result }) {
@@ -63,8 +71,7 @@ export default function (state = initialState, { type, payload, id, result }) {
       delete newState[id];
       return newState;
     }
-    case CLEAR_HISTORY:
-      return {};
+    case FETCH_DATA:
     default:
       return state;
   }

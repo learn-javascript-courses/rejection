@@ -25,7 +25,7 @@ const enhancer = compose(
 
 export default initialState => {
   const store = createStore(rootReducer, initialState, enhancer);
-  configureFirebase();
   sagas.run(rootSaga);
+  configureFirebase();
   return store;
 };

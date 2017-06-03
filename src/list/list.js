@@ -3,7 +3,7 @@ import { Button, Card, Segment, Container } from 'semantic-ui-react';
 import ListItems from './list-items';
 
 export default function List({ list = [], handleRejected, handleAccepted }) {
-  if (list.length <= 0) return <div />;
+  if (Object.keys(list).length <= 0) return <div />;
   return (
     <Container>
       <Segment padded>

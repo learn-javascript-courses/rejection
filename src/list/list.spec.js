@@ -14,19 +14,21 @@ export const ADD_HISTORY = 'ADD_HISTORY';
 export const CLEAR_HISTORY = 'CLEAR_HISTORY';
 
 const createHistory = (
-  { asked = 'Mom', person = 'Ryan', id = cuid(), result = 'REJECTED' } = {}
+  { asked = 'Mom', person = 'Ryan', id = cuid(), result = 'REJECTED', uid = 1 } = {}
 ) => ({
   asked,
   person,
   result,
-  id
+  id,
+  uid
 });
 
-const createAsk = ({ asked = '', person = '', result = undefined, id = cuid() } = {}) => ({
+const createAsk = ({ asked = '', person = '', result = undefined, id = cuid(), uid = 1 } = {}) => ({
   asked,
   person,
   id,
-  result
+  result,
+  uid
 });
 const createList = (asked = 'For Money', person = 'Mom') => [
   {
@@ -115,7 +117,8 @@ test('Should unit test the action object and the reducer', nest => {
     const ask = createAsk();
     const expected = {
       type: 'DELETE',
-      id: ask.id
+      id: ask.id,
+      uid: undefined
     };
     const actual = Actions.deleteAsk(ask.id);
     t.same(actual, expected, 'should create  a delete action object');
@@ -157,7 +160,8 @@ test('Should unit test the action object and the reducer', nest => {
     const expected = {
       type: 'ANSWER_ASK',
       id,
-      result: 'REJECTED'
+      result: 'REJECTED',
+      uid: undefined
     };
     const actual = Actions.answerAsk({ id, result: 'REJECTED' });
 
@@ -186,20 +190,15 @@ test('Should unit test the action object and the reducer', nest => {
     t.same(actual, expected, 'should test answer ask case');
     t.end();
   });
-  nest.test('should create a clear history action object', t => {
-    const actual = Actions.createClearHistory();
-    const expected = { type: 'CLEAR_HISTORY' };
-
-    t.same(actual, expected, 'should create the clear history action object');
+  nest.test('Should create fetching data action', t => {
+    const uid = 1;
+    const actual = Actions.fetchData(uid);
+    const expected = {
+      type: 'FETCH_DATA',
+      uid
+    };
+    t.same(actual, expected, 'should be the same');
     t.end();
   });
-  nest.test('Should create a clear history state', t => {
-    const action = Actions.createClearHistory();
-    const state = [createHistory()];
-    const expected = [];
-    const actual = listReducer(state, action);
-
-    t.same(actual, expected, 'should clear the history');
-    t.end();
-  });
+  nest.test('Should update state with data', t => {});
 });

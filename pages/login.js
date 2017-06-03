@@ -8,7 +8,6 @@ import Nav from '../src/navbar/navbar';
 const Index = () => (
   <div>
     <Head />
-    <Nav />
     <Login />
   </div>
 );
