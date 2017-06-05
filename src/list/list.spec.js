@@ -11,7 +11,6 @@ const render = ReactDom.renderToStaticMarkup;
 export const HISTORYREJECTED = 'HISTORYREJECTED';
 export const HISTORYACCEPTED = 'HISTORYACCEPTED';
 export const ADD_HISTORY = 'ADD_HISTORY';
-export const CLEAR_HISTORY = 'CLEAR_HISTORY';
 
 const createHistory = (
   { asked = 'Mom', person = 'Ryan', id = cuid(), result = 'REJECTED', uid = 1 } = {}
@@ -128,7 +127,7 @@ test('Should unit test the action object and the reducer', nest => {
     const addAsk = createAsk();
     const state = {};
     state[addAsk.id] = addAsk;
-    const expected = {};
+    const expected = Object.assign({}, state);
     const action = Actions.deleteAsk(addAsk.id);
     const actual = listReducer(state, action);
 
@@ -200,5 +199,22 @@ test('Should unit test the action object and the reducer', nest => {
     t.same(actual, expected, 'should be the same');
     t.end();
   });
-  nest.test('Should update state with data', t => {});
+  nest.test('should test the load asks action object', t => {
+    const asks = createAsk();
+    const actual = Actions.loadAsks(asks);
+    const expected = { type: 'LOAD_DATA', asks };
+
+    t.same(actual, expected, 'should create an action object with teh ask');
+    t.end();
+  });
+  nest.test('Should test the error action creator', t => {
+    const actual = Actions.createError('error');
+    const expected = {
+      type: 'ERROR',
+      error: 'error'
+    };
+
+    t.same(actual, expected, 'should be deeply equal');
+    t.end();
+  });
 });

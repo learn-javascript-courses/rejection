@@ -3,8 +3,7 @@ import * as loginActions from '../Login/loginReducer';
 
 const provider = new firebase.auth.FacebookAuthProvider();
 export const facebookSignIn = () => firebase.auth().signInWithPopup(provider);
-const facebookSignOut = () => firebase.auth().signOut();
-
+export const facebookSignOut = () => firebase.auth().signOut();
 export default {
   facebookSignIn,
   facebookSignOut

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Form } from 'semantic-ui-react';
-
+import { Form, Message } from 'semantic-ui-react';
 
 export default ({ input, meta: { touched, error }, ...custom }) => {
   const hasError = touched && error !== undefined;
@@ -15,4 +14,3 @@ export default ({ input, meta: { touched, error }, ...custom }) => {
     />
   );
 };
-

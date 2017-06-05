@@ -39,4 +39,14 @@ test('Should test the list sagas', nest => {
     t.same(actual, expected, 'should call the effect');
     t.end();
   });
+  nest.test('Should test the callFetchData saga', t => {
+    const action = actions.fetchData(1);
+    const expected = call(db.fetchAskList, 1);
+    const gen = saga.callFetchData(action);
+    const actual = gen.next().value;
+
+    t.same(actual, expected);
+
+    t.end();
+  });
 });

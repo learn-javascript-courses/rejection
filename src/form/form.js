@@ -6,7 +6,7 @@ import FormComponent from './formComponent';
 export default function (props) {
   const { handleSubmit, reset, pristine, submitting, errors } = props;
   return (
-    <Form>
+    <Form success>
       <Field name={'asked'} type={'text'} component={FormComponent} />
       <Field name={'person'} type={'text'} component={FormComponent} />
       <Button.Group>

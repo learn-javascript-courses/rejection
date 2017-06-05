@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import moment from 'moment';
-import { Link } from 'next/link';
 import autoBind from 'react-autobind';
-import Router from 'next/router';
 import { Button, Grid, Segment, Container, Message } from 'semantic-ui-react';
 import * as listActions from './list/list-reducer';
+import * as listSagaActions from './list/list.saga';
+import * as loginActions from './Login/loginReducer';
 import List from './list/list';
 import RejectionForm from './form';
 import Points from './points/points';
-import * as listSagaActions from './list/list.saga';
 import History from './history/history';
-import Nav from './navbar/navbar';
-import { isAuthedCheck } from './Login/loginReducer';
+import Profile from './profile/profile';
 import Login from './Login/Login';
 
 class Main extends Component {
@@ -21,15 +18,13 @@ class Main extends Component {
     super();
     autoBind(this);
   }
-  componentDidUpdate() {
-    if (this.props.uid) {
-      this.props.actions.fetchData(this.props.uid);
-    }
+  componentDidMount() {
+    this.props.actions.fetchData(this.props.uid);
   }
   handleSubmit() {
     const {
       uid,
-      actions: { addAsk, createSaveAsk },
+      actions: { addAsk },
       form: { RejectionForm: { values: { asked, person } } }
     } = this.props;
     addAsk({ asked, person, uid });
@@ -39,27 +34,31 @@ class Main extends Component {
     this.props.actions.deleteAsk(data.id, uid);
   }
   handleRejected(event, { data }) {
-    // dispatch single action here
-    this.props.actions.addAsk(data); // save ask to db and save ask in list
+    this.props.actions.addAsk(data);
   }
   handleAccepted(event, { data }) {
-    // dispatch single action here
     this.props.actions.addAsk(data);
   }
   render() {
+    const { list, points, history, actions: { deleteAsk } } = this.props;
     if (!this.props.isLoggedIn) {
       return <Login />;
     }
-    const { list, points, history, actions: { deleteAsk, clearScore } } = this.props;
-
-    if (!this.props.isLoggedIn) return Router.redirect('/login');
     return (
       <div>
-        <Nav />
-        <Container textAlign={'center'}>
-          <h1>{'Rejection Game'}</h1>
+        <Container>
+          <Button
+            inverted
+            color={'red'}
+            floated={'right'}
+            onClick={this.props.actions.startSignOut}
+          >
+            Sign Out
+          </Button>
+          <Profile floated={'left'} />
         </Container>
         <Container textAlign={'center'}>
+          <h1>{'Rejection Game'}</h1>
           <RejectionForm className={'main-container'} handleSubmit={this.handleSubmit} />
         </Container>
         <Grid columns={2}>
@@ -73,9 +72,7 @@ class Main extends Component {
           <Grid.Column>
             <History history={history} deleteAsk={this.deleteAsk} />
           </Grid.Column>
-          <Grid.Row>
-            <Points clearScore={clearScore} points={points} savePoints={this.savePoints} />
-          </Grid.Row>
+          <Points points={points} />
         </Grid>
 
       </div>
@@ -95,7 +92,8 @@ const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(
     {
       ...listActions,
-      ...listSagaActions
+      ...listSagaActions,
+      ...loginActions
     },
     dispatch
   )

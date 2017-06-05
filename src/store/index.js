@@ -7,10 +7,12 @@ import list from '../list/list-reducer';
 import rootSaga from '../sagas/root';
 import configureFirebase from '../lib/firebase';
 import login from '../Login/loginReducer';
+import user from '../profile/profile-reducer';
 
 const rootReducer = combineReducers({
   login,
   list,
+  user,
   form: formReducer
 });
 

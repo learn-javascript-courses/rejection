@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Card, Segment, Container } from 'semantic-ui-react';
 
-export default ({ list = {}, rejected = () => {}, accepted = () => {} } = {}) => (
+export default ({ list = {}, rejected = () => {}, accepted = () => {} } = {}) =>
   <div className="list-items">
     {Object.keys(list).map(
       (id, index) =>
@@ -39,5 +39,4 @@ export default ({ list = {}, rejected = () => {}, accepted = () => {} } = {}) =>
           </Card>
           : null
     )}
-  </div>
-);
+  </div>;
