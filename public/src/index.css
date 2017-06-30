@@ -1,0 +1,91 @@
+html {
+  font-size: 16px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #7982ec;
+}
+#questionsList {
+  list-style-type: none;
+}
+.true {
+  background: #289480;
+}
+.false {
+  background: #ec7982;
+}
+button {
+  font-size: 20px;
+}
+.flex-list {
+ display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  background: rgb(38, 45, 127);
+  margin: 0;
+  align-items: center;
+  color: #fff;
+  min-height: 100px;
+}
+.flex-list li {  
+  flex: 1;
+}
+.flex-list li a {
+  color:#fff;  
+  font-size: 17px; 
+  text-decoration: none;
+  padding: 5px;
+    margin: 1em;
+  border: 1px solid white;
+}
+.inputDiv {
+  padding: 1em;
+  width: 80%;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.inputDiv label {
+  margin: .5em;
+}
+.inputDiv input {
+  width: 300px;
+}
+.btn-styles {
+  display: flex;
+  justify-content: space-around;
+}
+p {
+  padding: .5em;
+}
+.userDetailsDiv p {
+  padding: 1em;
+  font-weight: 500;
+}
+.flex-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    background: #289480;
+    padding: 1em;
+    maring: 0;
+    border: 1px solid white;
+}
+.legend {
+  display: flex;
+  flex-direction: column;
+  background: rgb(38, 45, 127);
+  width: 400px;
+  color: white;
+  border: 1px solid white;
+}
+@media (max-width: 768px) {
+  .flex-list {
+    flex-direction:column;
+    height: 100%;
+  }
+}
