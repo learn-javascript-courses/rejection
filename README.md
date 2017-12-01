@@ -34,11 +34,12 @@ Use HTML+CSS and store a record of the data in `localStorage`.
 Your data structure can be a simple array of ask objects:
 
 ```js
-interface Ask {
+interface Question {
+  id: String           // id of the question so you can get/edit/remove by id
   timestamp: Number,   // output from Date.now()
-  ask: String,         // the ask
+  question: String,    // the ask
   askee: String,       // person asked
-  status: String       // 'Accepted' or 'Rejected'
+  status: String       // 'Accepted', 'Rejected', 'Unanswered'
 }
 ```
 
