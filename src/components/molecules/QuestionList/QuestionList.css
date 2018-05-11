@@ -1,0 +1,44 @@
+.qContainer{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  width:60vw;
+  justify-content:center;
+  align-items:center;
+  margin-left:20vw;
+}
+
+.score{
+  width:100vw;
+
+}
+.questions{
+    border: 1px solid black;
+    width: 20vw;
+    color:white;
+    padding: none;
+    background-color:green;
+    margin:0;
+    box-sizing:border-box;
+
+}
+
+.questions2{
+    border: 1px solid black;
+    padding:none;
+    color:white;
+    background-color:red;
+    margin:0;
+    width:20vw;
+    box-sizing:border-box;
+}
+
+.questions3{
+    border: 1px solid black;
+    padding:none;
+    color:black;
+    background-color:white;
+    margin:0;
+    width:20vw;
+    box-sizing:border-box;
+}

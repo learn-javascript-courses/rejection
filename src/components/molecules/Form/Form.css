@@ -1,0 +1,33 @@
+.form-container{
+  display:flex;
+  flex-direction:column;
+  width:60vw;
+  margin-left:20vw;
+  align-items:center;
+}
+.formQuestions{
+  display:flex;
+  flex-direction: row;
+}
+
+label{
+  font-size:16px;
+}
+
+.accept{
+  background-color:green;
+  color:white;
+}
+
+.reject{
+  background-color:red;
+  color:white;
+}
+
+.unasnwered{
+  background-color:yellow;
+}
+
+.score{
+  color:black;
+}
