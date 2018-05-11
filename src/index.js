@@ -7,24 +7,24 @@ import throttle from 'lodash/throttle';
 import App from './App';
 import { reducer as Questions } from './reducers/questions';
 import { loadState, saveState } from './reducers/local-state';
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 
 import './index.css';
 
-const persistedState = loadState()
+const persistedState = loadState();
 const store = createStore(
   Questions,
-  persistedState
+  persistedState,
 );
 
 store.subscribe(throttle(() => {
-  saveState(store.getState())
+  saveState(store.getState());
 }, 1000));
 
 render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
-registerServiceWorker();
+// registerServiceWorker();
