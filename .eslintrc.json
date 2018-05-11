@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "no-nested-ternary": [0]
+  },
+  "env": {
+    "browser": true
+  },
+  "extends": "airbnb"
+}
