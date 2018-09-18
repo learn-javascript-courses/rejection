@@ -24,6 +24,7 @@ We can write pure function reducers without installing redux just yet.
     -  Getters
          - Return all asks.
          - return an ask by id.
+         - calculate score
 
 ## View
 
