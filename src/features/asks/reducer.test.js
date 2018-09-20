@@ -1,4 +1,5 @@
 import { describe } from 'riteway';
+
 import { asksReducer as reducer, defaultState } from './reducers';
 import { createAsk } from './actions';
 
@@ -20,10 +21,12 @@ describe('src/features/asks/reducer', async should => {
   });
 
   {
+    const uid = 'could_be_anything';
     const action = createAsk({ question: 'Can I have a raise?', askee: 'Boss' });
+    action.payload.id = uid;
     const expected = {
       byId: {
-        1: { id: 1, question: 'Can I have a raise?', askee: 'Boss' },
+        [uid]: { id: uid, question: 'Can I have a raise?', askee: 'Boss' },
       },
     };
 

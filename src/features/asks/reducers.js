@@ -9,14 +9,13 @@ export const defaultState = {
 };
 
 export const asksReducer = (state = defaultState, action = { type: '' }) => {
-  console.log(`action: ${JSON.stringify(action, null, 2)}`);
   const { type, payload } = action;
 
   switch (type) {
     case createAsk().type:
       return {
         ...state,
-        byId: { ...state.byId, 1: { id: 1, ...payload } },
+        byId: { ...state.byId, [payload.id]: { ...payload } },
       };
 
     default:
