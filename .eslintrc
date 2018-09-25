@@ -1,0 +1,13 @@
+{
+  "parser": "babel-eslint",
+  "extends": "standard",
+  "plugins": [
+    "standard",
+    "promise"
+  ],
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "comma-dangle": [ 2, "always-multiline" ]
+  }
+}

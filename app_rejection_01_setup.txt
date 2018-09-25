@@ -1,0 +1,74 @@
+$ mkdir rejection-react
+$ cd rejection-react
+$ npm init -y
+$ git init .
+$ vi .gitignore
+node_modules/
+
+$ node -v
+$ echo '10.7.0' > .nvmrc
+
+$ npm install babel-core babel-cli babel-preset-env babel-plugin-transform-object-rest-spread --save-dev
+
+$ vi .babelrc
+{
+  "plugins": ["transform-object-rest-spread"],
+  "presets": ["env"]
+}
+
+$ mkdir src
+$ vi src/test.js
+const say = (suffix) => `Hello, ${suffix}`
+
+console.log(say(process.argv[2]))
+
+$ npx babel-node src/test.js World
+
+$ npm install eslint eslint-plugin-standard eslint-config-standard eslint-plugin-import eslint-plugin-promise eslint-plugin-node babel-eslint --save-dev
+$ vi .eslintrc
+{
+  "parser": "babel-eslint",
+  "extends": "standard",
+  "plugins": [
+    "standard",
+    "promise"
+  ],
+  "rules": {
+    "semi": ["error", "never"],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "comma-dangle": [ 2, "always-multiline" ]
+  }
+}
+
+$ vi package.json
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore -- ."
+    "lint:fix": "eslint --ignore-path .gitignore --fix -- ."
+  },
+
+$ npm run lint
+
+$ npm install riteway --save-dev
+$ vi package.json
+  "scripts": {
+    "test": "babel-node tests/unit/index.js",
+  },
+
+$ vi src/canary.test.js
+import { describe } from 'riteway'
+
+describe('component under test', async should => {
+  const { assert } = should()
+
+  assert({
+    given: 'some input',
+    should: 'some output',
+    actual: false,
+    expected: true,
+  })
+})
+
+$ vi tests/unit/index.js
+import '../../src/canary.test.js'
+
+$ npm test

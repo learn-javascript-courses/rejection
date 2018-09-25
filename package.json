@@ -1,0 +1,39 @@
+{
+  "name": "rejection",
+  "version": "1.0.0",
+  "description": "A student project for [Learn JavaScript with Eric Elliott](https://ericelliottjs.com).",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore -- .",
+    "lint:fix": "eslint --ignore-path .gitignore --fix -- .",
+    "test": "babel-node tests/unit/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samfrances/rejection.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samfrances/rejection/issues"
+  },
+  "homepage": "https://github.com/samfrances/rejection#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^9.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.4.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "riteway": "^2.0.4"
+  },
+  "dependencies": {
+    "cuid": "^2.1.4"
+  }
+}
