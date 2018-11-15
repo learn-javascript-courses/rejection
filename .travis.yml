@@ -10,7 +10,7 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
-  - npm test -- --coverage # Include coverage when running tests
+  - npm test -- --coverage --updateSnapshot # Include coverage when running tests
   - npm run build
 after_script: # Upload coverage reports
   - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run coveralls
