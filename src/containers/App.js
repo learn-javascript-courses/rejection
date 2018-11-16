@@ -41,6 +41,15 @@ export const HistoryContainer = (props) => {
             handleUpdate={() => update(q)}
           />
         ))}
+        {history.length === 0 ? (
+          <li className="list-group-item list-group-item-action flex-column align-items-center">
+            <p className="d-flex w-100 justify-content-between align-items-center h5">
+              No questions found, go ask some!
+            </p>
+          </li>
+        ) : (
+          ''
+        )}
       </ul>
     </div>
   );
