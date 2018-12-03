@@ -12,14 +12,17 @@ import registerServiceWorker from './registerServiceWorker';
 import App from './containers/App';
 
 /* eslint-disable no-underscore-dangle */
+let devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+if (process.env.NODE_ENV === 'prod' || process.env.NODE_ENV === 'production') {
+  devTools = a => a;
+}
+
 const store = createStore(
   rootReducer,
-  // persistedState,
-  // applyMiddleware(thunk),
   compose(
     applyMiddleware(thunk),
     /* ---- redux dev tools ----  */
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    devTools,
   ),
 );
 /* eslint-enable */
