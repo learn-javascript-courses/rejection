@@ -4,6 +4,7 @@
   "plugins": ["react", "import", "jsx-a11y"],
   "globals": {
     "document": true,
+    "fetch": true,
     "foo": true,
     "window": true,
     "it": true

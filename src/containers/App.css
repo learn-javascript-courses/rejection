@@ -1,34 +1,5 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hidden {
+  display: none !important;
 }
 
 .monospace {
@@ -55,14 +26,6 @@
   height: 20px;
 }
 
-/* arrows */
-i {
-  border: solid black;
-  border-width: 0 6px 6px 0;
-  display: inline-block;
-  padding: 6px;
-}
-
 .right {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
@@ -81,4 +44,103 @@ i {
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+}
+
+.titlecase {
+  text-transform: capitalize;
+}
+
+/* Login Buttons */
+
+.btn-social {
+  position: relative;
+  padding-left: 44px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-social > :first-child {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  line-height: 34px;
+  font-size: 1.6em;
+  text-align: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.btn-twitter {
+  color: #fff;
+  background-color: #55acee;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.btn-twitter:hover,
+.btn-twitter:focus {
+  background-color: #2795e9;
+}
+
+.btn-google {
+  color: #fff;
+  background-color: #0057e7;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.btn-google:hover,
+.btn-google:focus {
+  background-color: #008744;
+}
+
+.btn-github {
+  color: #fff;
+  background-color: #767676;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.btn-github:hover,
+.btn-github:focus {
+  background-color: #383838;
+}
+
+/* User Display */
+#user-dropdown {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 15px;
+}
+
+#user-dropdown:focus,
+.dropdown-item:focus {
+  outline: none;
+}
+
+#user-dropdown span {
+  font-size: 18px;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+#user-dropdown img {
+  border-radius: 50%;
+  border: 1px solid #fff;
+  width: 55px;
+  height: 55px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+#user-dropdown img:hover,
+#user-dropdown.active img {
+  background: #767676;
+  -webkit-box-shadow: 0 6px 6px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.45);
 }

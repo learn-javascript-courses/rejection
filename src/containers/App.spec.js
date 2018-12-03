@@ -1,9 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { App, Heading, HistoryContainer } from './App';
+import { WebSocket } from 'mock-socket';
+import { App } from './App';
+import Heading from '../components/Heading';
+import HistoryContainer from './HistoryContainer';
+
+global.WebSocket = WebSocket;
+
+process.on('unhandledRejection', (err, p) => {
+  // capture and suppress for nodejs test env
+});
 
 export const sampleHistoryObj = {
-  history: [
+  loading: false,
+  data: [
     {
       askee: 'Elon Musk',
       id: '36883675-8948-4cec-a163-08bb4aa3c239',
@@ -29,7 +39,7 @@ export const sampleHistoryObj = {
 };
 
 describe('App component', () => {
-  const component = shallow(<HistoryContainer {...sampleHistoryObj} />);
+  const component = shallow(<HistoryContainer history={sampleHistoryObj} />);
 
   it('should render history count', () => {
     expect(component.find('span.badge').text()).toMatch(/^3$/);
@@ -37,7 +47,7 @@ describe('App component', () => {
 });
 
 describe('App component heading (count)', () => {
-  const component = shallow(<Heading {...sampleHistoryObj} />);
+  const component = shallow(<Heading history={sampleHistoryObj} />);
 
   it('should render the score of 21', () => {
     expect(component.find('p.h3').text()).toMatch(/^.*?Score:21.*?$/);

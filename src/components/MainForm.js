@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import { addToHistory, updateHistory } from '../actions';
+import { addHistory, updateHistory } from '../actions';
 
 // Synchronous validation function
 const validate = (value) => {
@@ -118,10 +118,10 @@ export const MainFormFormik = withFormik({
   handleSubmit(values, { props, resetForm, setSubmitting }) {
     setTimeout(() => {
       if (values.updating) {
-        props.dispatch(updateHistory(values));
+        props.dispatch(updateHistory(props.user.token, values));
         props.dispatch({ type: 'STOP_UPDATING' });
       } else {
-        props.dispatch(addToHistory(values));
+        props.dispatch(addHistory(props.user.token, values));
       }
       resetForm();
       setSubmitting(false);
@@ -131,6 +131,7 @@ export const MainFormFormik = withFormik({
 
 const mapStateToProps = state => ({
   updating: state.updating,
+  user: state.user,
 });
 
 export default connect(mapStateToProps)(MainFormFormik);

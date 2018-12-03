@@ -16,5 +16,5 @@ app.listen(PORT, '0.0.0.0', (err) => {
   if (err) {
     console.log(err);
   }
-  console.info(`==> 🌎 app listening on http://localhost:${PORT}.`);
+  console.info(`==> 🌎 app is listening on http://localhost:${PORT}.`);
 });

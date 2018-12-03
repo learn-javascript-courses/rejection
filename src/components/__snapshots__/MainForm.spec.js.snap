@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormContainer component FormContainer Snapshots should match stored FormContainer - empty case 1`] = `
+exports[`MainFormFormik component MainFormFormik Snapshots should match stored FormContainer - empty case 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <WithFormik(FormContainer)
+  Symbol(enzyme.__unrendered__): <WithFormik(MainForm)
     askee=""
     question=""
     status=""
@@ -101,10 +101,10 @@ ShallowWrapper {
 }
 `;
 
-exports[`FormContainer component FormContainer Snapshots should match stored FormContainer - update case 1`] = `
+exports[`MainFormFormik component MainFormFormik Snapshots should match stored FormContainer - update case 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <WithFormik(FormContainer)
+  Symbol(enzyme.__unrendered__): <WithFormik(MainForm)
     updating={
       Object {
         "askee": "Test Askee",
