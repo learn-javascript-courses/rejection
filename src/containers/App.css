@@ -119,6 +119,11 @@
   outline: none;
 }
 
+#user-dropdown,
+.dropdown-item {
+  cursor: pointer;
+}
+
 #user-dropdown span {
   font-size: 18px;
   font-weight: 700;
