@@ -1,0 +1,26 @@
+{
+  "name": "rejection-app-javier",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "test": "node -r @babel/register -r @babel/polyfill src/test",
+    "build": "npm run test && next build",
+    "install": "npm install",
+    "start": "next start",
+    "watch": "watch 'clear && npm run -s test' src"
+  },
+  "dependencies": {
+    "@babel/polyfill": "7.2.5",
+    "@babel/preset-env": "7.3.4",
+    "@babel/preset-react": "7.0.0",
+    "@babel/register": "7.0.0",
+    "next": "latest",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "riteway": "6.0.3"
+  },
+  "license": "ISC",
+  "keywords": [],
+  "description": ""
+}
+
