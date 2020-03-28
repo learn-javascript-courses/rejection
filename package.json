@@ -1,0 +1,35 @@
+{
+  "name": "rejection",
+  "version": "1.0.0",
+  "description": "A student project for [Learn JavaScript with Eric Elliott](https://ericelliottjs.com).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CCole/rejection.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CCole/rejection/issues"
+  },
+  "homepage": "https://github.com/CCole/rejection#readme",
+  "dependencies": {
+    "next": "^9.3.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/register": "^7.9.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
+    "riteway": "^6.1.1",
+    "tap-nirvana": "^1.1.0"
+  }
+}
