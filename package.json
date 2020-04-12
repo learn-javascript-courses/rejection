@@ -4,7 +4,10 @@
   "description": "A student project for [Learn JavaScript with Eric Elliott](https://ericelliottjs.com).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx next",
+    "build": "npx next build",
+    "start": "npx next start",
+    "test": "riteway -r @babel/register -r @babel/polyfill \"src/index.test.js\" | tap-nirvana"
   },
   "repository": {
     "type": "git",
@@ -17,6 +20,8 @@
   },
   "homepage": "https://github.com/CCole/rejection#readme",
   "dependencies": {
+    "@material-ui/core": "^4.9.9",
+    "cuid": "^2.1.8",
     "next": "^9.3.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
@@ -29,6 +34,7 @@
     "@babel/register": "^7.9.0",
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.19.0",
+    "esm": "^3.2.25",
     "riteway": "^6.1.1",
     "tap-nirvana": "^1.1.0"
   }
