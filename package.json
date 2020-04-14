@@ -21,6 +21,7 @@
   "homepage": "https://github.com/CCole/rejection#readme",
   "dependencies": {
     "@material-ui/core": "^4.9.9",
+    "bootstrap-css-only": "^4.4.1",
     "cuid": "^2.1.8",
     "next": "^9.3.2",
     "react": "^16.13.1",

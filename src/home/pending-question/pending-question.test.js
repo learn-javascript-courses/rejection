@@ -84,10 +84,11 @@ describe('PendingQuestion', async assert => {
 
         assert({
             given: 'expected props',
-            should: 'render a table data element for header',
+            should: 'render 6 table data elements for table header',
             actual: $('.pending-header-data').length,
-            expected: 1
+            expected: 6
         });
+
 
         assert({
             given: 'expected props',
@@ -95,6 +96,35 @@ describe('PendingQuestion', async assert => {
             actual: $('.pending-questions-body').length,
             expected: 1
         });
+
+        assert({
+            given: 'expected props',
+            should: 'render a pending table header',
+            actual: $('.table-titles').length,
+            expected: 1
+        });
+
+        assert({
+            given: 'expected props',
+            should: 'render 1 row',
+            actual: $('.row').length,
+            expected: 1
+        });
+
+        assert({
+            given: 'expected props',
+            should: 'render 1 col',
+            actual: $('.col-8').length,
+            expected: 1
+        });
+
+        assert({
+            given: 'expected props',
+            should: 'render render table responsive div',
+            actual: $('.table-responsive').length,
+            expected: 1
+        });
+
     }
 
 });

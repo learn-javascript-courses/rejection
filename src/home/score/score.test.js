@@ -36,4 +36,34 @@ describe('Score', async assert => {
             expected: total
         });
     }
+
+    assert({
+        given: 'no props',
+        should: 'render an image tag',
+        actual: $('img').length,
+        expected: 1
+    });
+
+    assert({
+        given: 'no props',
+        should: 'render 2 rows',
+        actual: $('.row').length,
+        expected: 2
+    });
+
+    assert({
+        given: 'no props',
+        should: 'render 2 col',
+        actual: $('.col').length,
+        expected: 2
+    });
+
+    assert({
+        given: 'no props',
+        should: 'render quote',
+        actual: $('.quote').length,
+        expected: 1
+    });
+
+
 });

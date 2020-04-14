@@ -1,7 +1,5 @@
 import { describe } from 'riteway';
 import render from 'riteway/render-component';
-
-import { addQuestion } from '../rejection-reducer'
 import AddQuestion from './add-question';
 
 describe('AddQuestion', async assert => {
@@ -47,6 +45,41 @@ describe('AddQuestion', async assert => {
             given: 'expected props',
             should: 'render the submit button',
             actual: $('#addQuestion').length,
+            expected: 1
+        });
+
+        assert({
+            given: 'expected props',
+            should: 'render the submit button',
+            actual: $('.addQuestionTitle').length,
+            expected: 1
+        });
+
+        assert({
+            given: 'expected props',
+            should: 'render 1 form-inline',
+            actual: $('.form-inline').length,
+            expected: 1
+        });
+
+        assert({
+            given: 'expected props',
+            should: 'render 1 col',
+            actual: $('.col').length,
+            expected: 1
+        });
+
+        assert({
+            given: 'expected props',
+            should: 'render 2 input form controls',
+            actual: $('.form-control').length,
+            expected: 2
+        });
+
+        assert({
+            given: 'expected props',
+            should: 'render 1 row',
+            actual: $('.row').length,
             expected: 1
         });
 

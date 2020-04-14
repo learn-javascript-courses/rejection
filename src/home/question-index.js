@@ -1,4 +1,4 @@
-import React, { useReducer, Fragment } from 'react';
+import React, { useReducer, useEffect, Fragment } from 'react';
 import cuid from 'cuid';
 
 import AddQuestion from './add-question/add-question';
@@ -13,14 +13,15 @@ import {
 
 export default () => {
     const [questions, dispatch] = useReducer(reducer, reducer());
-    // store the state not individual questions
-    //retrieve the state and then map or filter as needed
+
+    useEffect(() => setQuestions(questions));
+    
     const question = addQuestion();
 
     const setQuestions = (questions) => {
         localStorage.setItem('storeKey', JSON.stringify(questions));
     };
-
+    
 
     return (
         <Fragment>
@@ -35,10 +36,9 @@ export default () => {
                 onClick={
                     () => {
                         if (question.payload.askee !== '' && question.payload.question !== '') {
-
                             dispatch(addQuestion(question.payload));
                             setQuestions(questions);
-                            //console.log(getQuestions('storeKey'));
+                            console.log(localStorage.getItem('storeKey'));
                         }
                     }
                 } />

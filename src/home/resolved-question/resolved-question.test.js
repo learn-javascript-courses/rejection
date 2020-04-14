@@ -50,9 +50,9 @@ describe('Resolved Question', async assert => {
 
     assert({
         given: 'expected props',
-        should: 'render a resolved table data element for header',
+        should: 'render 5 resolved table data elements for header',
         actual: $('.resolved-header-data').length,
-        expected: 1
+        expected: 5
     });
 
     assert({
@@ -71,9 +71,37 @@ describe('Resolved Question', async assert => {
 
     assert({
         given: '2 questions',
-        should: 'render 8 body data elements',
+        should: 'render 10 body data elements',
         actual: $('.body-data').length,
-        expected: 8
+        expected: 10
+    });
+
+    assert({
+        given: 'expected props',
+        should: 'render a resolved table header',
+        actual: $('.table-titles').length,
+        expected: 1
+    });
+
+    assert({
+        given: 'expected props',
+        should: 'render 1 row',
+        actual: $('.row').length,
+        expected: 1
+    });
+
+    assert({
+        given: 'expected props',
+        should: 'render 1 col',
+        actual: $('.col-8').length,
+        expected: 1
+    });
+
+    assert({
+        given: 'expected props',
+        should: 'render render table responsive div',
+        actual: $('.table-responsive').length,
+        expected: 1
     });
 
 });

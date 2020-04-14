@@ -1,12 +1,14 @@
-import AddQuestion from '../src/home/add-question/add-question';
+import React, { Fragment } from 'react';
 import Questions from '../src/home/question-index';
 
-export default function Index () {
+export default function Index() {
     return (
-        <div>
-            <p>Hello...</p>
-            {/* <AddQuestion /> */}
-            <Questions/>
-        </div>
+
+        <Fragment>
+            <div className='container' role='main'>
+                <Questions />
+            </div>
+        </Fragment>
+
     );
 }
