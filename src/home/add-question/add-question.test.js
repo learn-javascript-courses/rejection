@@ -1,6 +1,5 @@
 import { describe } from 'riteway';
 import render from 'riteway/render-component';
-import {status} from '../constants/constants';
 import AddQuestion from './add-question';
 
 describe('AddQuestion', async assert => {
@@ -8,7 +7,7 @@ describe('AddQuestion', async assert => {
         const question = {
             askee: 'Hebru Brantley',
             question: 'Creative collaboration',
-            status: status.pending
+            status: 'Pending'
         };
         
         const $ = render(<AddQuestion question={question} />);

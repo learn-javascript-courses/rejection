@@ -5,8 +5,8 @@ import PendingQuestion from './pending-question/pending-question';
 import ResolvedQuestion from './resolved-question/resolved-question';
 import Score from './score/score';
 import {
-    reducer, addQuestion, 
-    updateQuestion, getResolved, 
+    reducer, addQuestion,
+    updateQuestion, getResolved,
     getPending, getScore
 } from './rejection-reducer';
 
@@ -15,17 +15,17 @@ export default () => {
     const [questions, dispatch] = useReducer(reducer, reducer());
 
     useEffect(() => setQuestions(questions));
-    
+
     const question = addQuestion();
 
     const setQuestions = (questions) => {
         localStorage.setItem('storeKey', JSON.stringify(questions));
     };
-    
+
 
     return (
         <Fragment>
-            <Score total={getScore(questions)}/>
+            <Score total={getScore(questions)} />
             <AddQuestion
                 onChange={
                     (e) => {
@@ -48,14 +48,14 @@ export default () => {
                 (e) => {
                     const id = e.target.closest('tr.body-row').id;
                     if (e.target.className === 'accepted') {
-                        dispatch(updateQuestion({id, status: 'Accepted'}));
+                        dispatch(updateQuestion({ id, status: 'Accepted' }));
                     } else if (e.target.className === 'rejected') {
-                        dispatch(updateQuestion({id, status: 'Rejected'}));
+                        dispatch(updateQuestion({ id, status: 'Rejected' }));
                     }
                 }
             } />
 
-            <ResolvedQuestion questions={getResolved(questions)} /> 
+            <ResolvedQuestion questions={getResolved(questions)} />
         </Fragment>
     );
 }
