@@ -1,6 +1,5 @@
 import { describe } from 'riteway';
 import render from 'riteway/render-component';
-
 import ResolvedQuestion from './resolved-question';
 
 const createState = (questions = []) => questions;
@@ -28,79 +27,30 @@ describe('Resolved Question', async assert => {
     const $ = render(<ResolvedQuestion questions={createState(questions)} />);
 
     assert({
-        given: 'expected props',
-        should: 'render a resolved questions table with the class resolved-questions',
+        given: 'questions in state',
+        should: 'render a resolved questions table',
         actual: $('.resolved-questions').length,
         expected: 1
     });
 
     assert({
-        given: 'expected props',
-        should: 'render a resolved table header',
-        actual: $('.resolved-questions-header').length,
-        expected: 1
-    });
-
-    assert({
-        given: 'expected props',
-        should: 'render a resolved table header row',
+        given: 'questions in state',
+        should: 'render the table header data',
         actual: $('.resolved-header-row').length,
         expected: 1
     });
 
     assert({
-        given: 'expected props',
-        should: 'render 5 resolved table data elements for header',
-        actual: $('.resolved-header-data').length,
-        expected: 5
-    });
-
-    assert({
-        given: 'expected props',
-        should: 'render a resolved table body',
-        actual: $('.resolved-questions-body').length,
-        expected: 1
-    });
-
-    assert({
-        given: '2 questions',
-        should: 'render two body rows',
+        given: '2 questions in state',
+        should: 'render two rows of question data',
         actual: $('.body-row').length,
         expected: 2
     });
 
     assert({
-        given: '2 questions',
-        should: 'render 10 body data elements',
-        actual: $('.body-data').length,
-        expected: 10
-    });
-
-    assert({
-        given: 'expected props',
-        should: 'render a resolved table header',
-        actual: $('.table-titles').length,
-        expected: 1
-    });
-
-    assert({
-        given: 'expected props',
-        should: 'render 1 row',
-        actual: $('.row').length,
-        expected: 1
-    });
-
-    assert({
-        given: 'expected props',
-        should: 'render 1 col',
-        actual: $('.col-8').length,
-        expected: 1
-    });
-
-    assert({
-        given: 'expected props',
-        should: 'render render table responsive div',
-        actual: $('.table-responsive').length,
+        given: 'questions in state',
+        should: 'render the table title',
+        actual: $('.table-title').length,
         expected: 1
     });
 

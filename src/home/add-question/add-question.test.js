@@ -1,13 +1,14 @@
 import { describe } from 'riteway';
 import render from 'riteway/render-component';
+import {status} from '../constants/constants';
 import AddQuestion from './add-question';
 
 describe('AddQuestion', async assert => {
   
         const question = {
-            askee: '',
-            question: '',
-            status: ''
+            askee: 'Hebru Brantley',
+            question: 'Creative collaboration',
+            status: status.pending
         };
         
         const $ = render(<AddQuestion question={question} />);
@@ -15,72 +16,43 @@ describe('AddQuestion', async assert => {
 
         assert({
             given: 'expected props',
-            should: 'render a label for ask',
+            should: 'render 1 label for the ask',
             actual: $('#askLabel').length,
             expected: 1
         });
 
         assert({
             given: 'expected props',
-            should: 'render a label for ask',
+            should: 'render 1 label for the askee',
             actual: $('#askeeLabel').length,
             expected: 1
         });
 
         assert({
             given: 'expected props',
-            should: 'render an ask input',
+            should: 'render 1 input for the ask',
             actual: $('#ask').length,
             expected: 1
         });
 
         assert({
             given: 'expected props',
-            should: 'render an askee input',
+            should: 'render 1 input for the askee',
             actual: $('#askee').length,
             expected: 1
         });
 
         assert({
             given: 'expected props',
-            should: 'render the submit button',
+            should: 'render 1 add question button',
             actual: $('#addQuestion').length,
             expected: 1
         });
 
         assert({
             given: 'expected props',
-            should: 'render the submit button',
+            should: 'render 1 add question header',
             actual: $('.addQuestionTitle').length,
             expected: 1
         });
-
-        assert({
-            given: 'expected props',
-            should: 'render 1 form-inline',
-            actual: $('.form-inline').length,
-            expected: 1
-        });
-
-        assert({
-            given: 'expected props',
-            should: 'render 1 col',
-            actual: $('.col').length,
-            expected: 1
-        });
-
-        assert({
-            given: 'expected props',
-            should: 'render 2 input form controls',
-            actual: $('.form-control').length,
-            expected: 2
-        });
-
-        assert({
-            given: 'expected props',
-            should: 'render 1 row',
-            actual: $('.row').length,
-            expected: 1
-        });
-
 });

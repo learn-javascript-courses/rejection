@@ -1,13 +1,13 @@
 import React, { useReducer, useEffect, Fragment } from 'react';
-import cuid from 'cuid';
 
 import AddQuestion from './add-question/add-question';
 import PendingQuestion from './pending-question/pending-question';
 import ResolvedQuestion from './resolved-question/resolved-question';
 import Score from './score/score';
 import {
-    reducer, addQuestion, acceptedQuestion, rejectedQuestion,
-    getQuestion, getResolved, getPending, getScore
+    reducer, addQuestion, 
+    updateQuestion, getResolved, 
+    getPending, getScore
 } from './rejection-reducer';
 
 
@@ -37,8 +37,9 @@ export default () => {
                     () => {
                         if (question.payload.askee !== '' && question.payload.question !== '') {
                             dispatch(addQuestion(question.payload));
+                            console.log(questions);
                             setQuestions(questions);
-                            console.log(localStorage.getItem('storeKey'));
+                            //console.log(localStorage.getItem('storeKey'));
                         }
                     }
                 } />
@@ -47,14 +48,14 @@ export default () => {
                 (e) => {
                     const id = e.target.closest('tr.body-row').id;
                     if (e.target.className === 'accepted') {
-                        dispatch(acceptedQuestion(getQuestion(questions, id)));
+                        dispatch(updateQuestion({id, status: 'Accepted'}));
                     } else if (e.target.className === 'rejected') {
-                        dispatch(rejectedQuestion(getQuestion(questions, id)));
+                        dispatch(updateQuestion({id, status: 'Rejected'}));
                     }
                 }
             } />
 
-            <ResolvedQuestion questions={getResolved(questions)} />
+            <ResolvedQuestion questions={getResolved(questions)} /> 
         </Fragment>
     );
 }

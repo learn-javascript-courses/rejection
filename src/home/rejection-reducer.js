@@ -1,11 +1,13 @@
 import cuid from 'cuid';
-import pipe from './utils/pipe';
 /*  action creator for decoupling logic from dispatch callers
     action creators can be impure */
 const accepted = 'Accepted';
 const rejected = 'Rejected';
+const pending = 'Pending';
 
-const addQuestion = ({ askee = '', question = '', status = '', id = cuid(), timeStamp = Date.now() } = {}) => ({
+const initialState = {};
+
+const addQuestion = ({ askee = '', question = '', status = 'Pending', id = cuid(), timeStamp = Date.now() } = {}) => ({
     type: addQuestion.type,
     payload: {
         id,
@@ -19,41 +21,33 @@ const addQuestion = ({ askee = '', question = '', status = '', id = cuid(), time
 
 addQuestion.type = 'rejection/addQuestion';
 
-const acceptedQuestion = ({ id, askee, question } = {}) => ({
-    type: acceptedQuestion.type,
+
+const updateQuestion = ({ id, question, askee, status } = {}) => ({
+    type: updateQuestion.type,
     payload: {
         id,
-        timeStamp: Date.now(),
-        askee,
-        question,
-        status: accepted
+        ...(question && { question }),
+        ...(askee && { askee }),
+        ...(status && { status })
     }
 });
 
+updateQuestion.type = 'rejection/updateQuestion';
 
 
-acceptedQuestion.type = 'rejection/acceptedQuestion';
 
-const rejectedQuestion = ({ id, askee, question } = {}) => ({
-    type: rejectedQuestion.type,
-    payload: {
-        id,
-        timeStamp: Date.now(),
-        askee,
-        question,
-        status: rejected
-    }
-});
-
-rejectedQuestion.type = 'rejection/rejectedQuestion';
-
-const reducer = (state = [], { type, payload } = {}) => {
+const reducer = (state = initialState, { type, payload } = {}) => {
     switch (type) {
-        case rejectedQuestion.type:
-        case acceptedQuestion.type:
-            return filterState(concatState(state)(payload))(payload);
+        case updateQuestion.type:
+            return {
+                ...state,
+                [payload.id]: {
+                    ...state[payload.id],
+                    ...payload
+                }
+            };
         case addQuestion.type:
-            return state.concat([payload]);
+            return { ...state, [payload.id]: payload };
         default:
             return state;
     }
@@ -63,7 +57,7 @@ const reducer = (state = [], { type, payload } = {}) => {
 
 // selector for calculating state
 
-const getScore = (state) => state.reduce((score, question) => {
+const getScore = (state) => Object.values(state).reduce((score, question) => {
     switch (question.status) {
         case 'Accepted':
             return score + 1;
@@ -74,32 +68,20 @@ const getScore = (state) => state.reduce((score, question) => {
     }
 }, 0);
 
-const getQuestion = (state, id) => {
-    return state.filter(question => question.id === id)[0];
-};
 
-const getResolved = (state) => {
-    return state.filter(question => question.status !== '');
+const getQuestion = (state, id) => {
+    return Object.values(state).filter(question => question.id === id)[0];
 };
 
 const getPending = (state) => {
-    return state.filter(question => question.status === '');
+    return Object.values(state).filter(question => question.status === 'Pending');
 };
 
-const filterState = state => payload => {
-
-    return state.filter(question => question.id !== payload.id ||
-        (question.id === payload.id && question.status !== ''));
-
+const getResolved = (state) => {
+    return Object.values(state).filter(question => question.status !== 'Pending');
 };
-
-const concatState = state => payload => state.concat([payload]);
-//(state) => pipe(concatState(state), filterState(state));
-
-
-
 
 export {
-    reducer, addQuestion, acceptedQuestion, rejectedQuestion,
-    getScore, getQuestion, getResolved, getPending, filterState, concatState
+    reducer, addQuestion, updateQuestion,
+    getScore, getQuestion, getPending, getResolved
 }
