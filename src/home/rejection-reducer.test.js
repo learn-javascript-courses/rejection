@@ -33,23 +33,20 @@ describe('rejection reducer / add question', async assert => {
 });
 
 describe('rejection reducer / update question', async assert => {
-    const question = {
-        id: 0,
-        timeStamp: 1586543957992,
-        askee: 'Sean Corey Carter',
-        question: 'Lead rocnation web redesign',
-        status: ''
-    };
 
-
-
-    console.log(reducer(reducer(), updateQuestion({id:0, status:'Accepted'}))[0].status);
 
     assert({
         given: 'a question to update',
-        should: 'update question status',
+        should: 'return question status',
         actual: reducer(reducer(), updateQuestion({id:0, status:'Accepted'}))[0].status,
         expected: 'Accepted'
+    })
+
+    assert({
+        given: 'a question to update',
+        should: 'return the question id',
+        actual: reducer(reducer(), updateQuestion({id:0, status:'Accepted'}))[0].id,
+        expected: 0
     })
 });
 
