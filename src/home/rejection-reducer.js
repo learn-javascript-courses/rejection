@@ -1,9 +1,6 @@
 import cuid from 'cuid';
 /*  action creator for decoupling logic from dispatch callers
     action creators can be impure */
-const accepted = 'Accepted';
-const rejected = 'Rejected';
-const pending = 'Pending';
 
 const initialState = {};
 

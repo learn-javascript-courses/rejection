@@ -24,6 +24,7 @@ describe('rejection reducer / add question', async assert => {
         status: 'Pending'
     };
 
+
     assert({
         given: 'a question to add',
         should: 'add question to state',

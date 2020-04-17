@@ -1,8 +1,8 @@
 # Rejection
 
-A student project for [Learn JavaScript with Eric Elliott](https://ericelliottjs.com).
+The Rejection App. 
+A portfolio project for professional developers to showcase their React skills.
 
-Want to work as a team?
 
 You gotta lose to win.
 
