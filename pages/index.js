@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Rejection from '../src/home/rejection-index';
 
 export default function Index() {
