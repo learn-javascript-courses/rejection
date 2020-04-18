@@ -29,12 +29,7 @@ const updateQuestion = ({ id, question, askee, status } = {}) => ({
     }
 });
 
-
-
-
 updateQuestion.type = 'rejection/updateQuestion';
-
-
 
 const reducer = (state = initialState, { type, payload } = {}) => {
     switch (type) {
@@ -53,10 +48,7 @@ const reducer = (state = initialState, { type, payload } = {}) => {
     }
 };
 
-
-
 // selector for calculating state
-
 const getScore = (state) => Object.values(state).reduce((score, question) => {
     switch (question.status) {
         case 'Accepted':

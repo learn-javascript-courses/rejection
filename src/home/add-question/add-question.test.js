@@ -3,6 +3,7 @@ import render from 'riteway/render-component';
 import AddQuestion from './add-question';
 
 describe('AddQuestion', async assert => {
+    const initialState = {question: '', askee: '' }
   
         const question = {
             askee: 'Hebru Brantley',
@@ -10,9 +11,8 @@ describe('AddQuestion', async assert => {
             status: 'Pending'
         };
         
-        const $ = render(<AddQuestion question={question} />);
+        const $ = render(<AddQuestion question={question} values={initialState} />);
    
-
         assert({
             given: 'expected props',
             should: 'render 1 label for the ask',

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Emoji from '../emoji/emoji';
 
 const ResolvedQuestion = ({ questions }) => {

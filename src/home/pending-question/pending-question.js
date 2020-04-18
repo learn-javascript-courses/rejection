@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const PendingQuestion = ({ questions, onClick }) => {
     return (
@@ -17,11 +17,8 @@ const PendingQuestion = ({ questions, onClick }) => {
                                 <td className='pending-header-data'>Rejected!!</td>
                             </tr>
                         </thead>
-
                         <tbody className='pending-questions-body'>
-
-                            {questions.map((question, index) => {
-
+                            {questions.map((question) => {
                                 return (
                                     <tr key={question.id} id={question.id} className='body-row'>
                                         <td className='body-data question-id'>{question.id}</td>
@@ -29,18 +26,16 @@ const PendingQuestion = ({ questions, onClick }) => {
                                         <td className='body-data question-data-pt'>{question.question}</td>
                                         <td className='body-data question-status'>{question.status}</td>
                                         <td className='body-data'><button className="accepted"
-                                            onClick={onClick}>Accepted</button>
+                                            onClick={() => onClick(question.id, 'Accepted')}>Accepted</button>
                                         </td>
                                         <td className='body-data'><button className="rejected"
-                                            onClick={onClick}>Rejected</button>
+                                            onClick={() => onClick(question.id, 'Rejected')}>Rejected</button>
                                         </td>
-                                    </tr>)
-
+                                    </tr>
+                                )
                             })
                             }
-
                         </tbody>
-
                     </table>
                 </div>
             </div>

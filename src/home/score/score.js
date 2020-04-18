@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import Emoji from '../emoji/emoji';
 
-
 const Score = ({ total }) => {
     return (
         <Fragment>
@@ -12,7 +11,6 @@ const Score = ({ total }) => {
                     </p>
                     <Emoji symbol={'😣'} label={'fire'}/>
                 </div>
-
             </div>
             <div className='row'>
                 <div className='col splash d-flex justify-content-center'>
@@ -60,8 +58,6 @@ img {
  
     }
 }
-
-
 `}</style>
         </Fragment>
     );

@@ -6,7 +6,6 @@ const createState = (questions = []) => questions;
 
 describe('Resolved Question', async assert => {
     
-    
     const questions = [{
         id: 0,
         timeStamp: 1586543957992,
@@ -22,7 +21,6 @@ describe('Resolved Question', async assert => {
         status: 'Accepted'
     }
     ];
-
 
     const $ = render(<ResolvedQuestion questions={createState(questions)} />);
 
