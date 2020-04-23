@@ -50,17 +50,14 @@ It may be useful to display a running tally of the user's current score. Just re
 
 ## Mid level
 
-Add an API to store data using a web service and database. Track multiple users (which means you'll need to add user authentication). Hint: Redis, Mongo, or RethinkDB would be good database candidates. Social login such as Facebook or Twitter would be good login options (easier and more secure than username/password logins).
+Add an API to store data using a web service and database. Track multiple users (which means you'll need to [add user authentication](https://medium.com/javascript-scene/passwords-are-obsolete-how-to-secure-your-app-and-protect-your-users-1cd6c7b7c3bc)).
 
+Try [Firebase](https://firebase.google.com/) for data storage.
 
-## Advanced level
-
-* Share your score and compete with your friends on Facebook.
-* For each user, keep a leaderboard from their circle of friends.
 
 ## Extra credit
 
-* Add mobile apps by turning your web app into a [Progressive Web Application](https://medium.com/javascript-scene/why-native-apps-really-are-doomed-native-apps-are-doomed-pt-2-e035b43170e9).
+* Add mobile apps by turning your web app into a [Progressive Web Application](https://web.dev/pwa-checklist/).
 
 
 ## To Implement:
