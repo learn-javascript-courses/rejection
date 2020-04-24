@@ -1,6 +1,6 @@
 # Rejection
 
-A portfolio project to highlight React skills. [Learn JavaScript with Eric Elliott](https://ericelliottjs.com).
+A portfolio project for professional developers to highlight React skills. [Learn JavaScript with Eric Elliott](https://ericelliottjs.com).
 
 Want to work as a team?
 
