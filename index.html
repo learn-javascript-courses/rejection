@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rejection</title>
+		<link rel="stylesheet" href="./static/style/index.css" />
+		<script defer src="./src/index.js"></script>
+	</head>
+	<body>
+		<div class="form">
+			<div class="row">
+				<label for="askee">Name</label>
+				<input id="askee" placeholder="Askee" />
+			</div>
+			<div class="row">
+				<label for="question">Question</label>
+				<input id="question" placeholder="Question" />
+			</div>
+			<div class="row">
+				<button class="button button-handler" data-action="Accepted">Accepted</button>
+				<button class="button button-handler" data-action="Rejected">Rejected</button>
+				<button class="button button-handler" data-action="Unanswered">Unanswered</button>
+			</div>
+		</div>
+		<div id="data-table"></div>
+	</body>
+</html>

@@ -33,7 +33,7 @@ Use HTML+CSS and store a record of the data in `localStorage`.
 
 Your data structure can be a simple array of ask objects:
 
-```js
+```ts
 interface Question {
   id: String           // id of the question so you can get/edit/remove by id
   timestamp: Number,   // output from Date.now()
