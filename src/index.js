@@ -36,6 +36,7 @@ function generateRandomId() {
 const askeeInput = document.getElementById("askee");
 const questionInput = document.getElementById("question");
 const dataTable = document.getElementById("data-table");
+const pointsLabel = document.getElementById("points");
 
 const buttonHandlers = Array.from(
 	document.getElementsByClassName("button-handler")
@@ -70,7 +71,7 @@ function generateTable(questions) {
 		.map(({ id, askee, question, timestamp, status }, index) => {
 			return `
 				<tr>
-					<td>${index + 1}</td>
+					<td><b>${index + 1}</b></td>
 					<td>${askee}</td>
 					<td>${question}</td>
 					<td>${datetimeFormatter(new Date(timestamp))}</td>
@@ -92,6 +93,8 @@ function datetimeFormatter(date = new Date()) {
 
 function updateTable() {
 	const questions = getQuestions();
+	const points = getPoints(questions);
+	console.log("Points", points);
 	let tableTemplate = "";
 	if (questions.length) {
 		tableTemplate = `
@@ -115,6 +118,20 @@ function updateTable() {
 		tableTemplate = "No data!";
 	}
 	dataTable.innerHTML = tableTemplate;
+	pointsLabel.innerHTML = `Points: ${points}`;
+}
+
+function getPoints(questions = []) {
+	return questions.reduce((acc, { status }) => {
+		switch (status) {
+			case "Accepted":
+				return acc + 1;
+			case "Rejected":
+				return acc + 10;
+			default:
+				return acc;
+		}
+	}, 0);
 }
 
 updateTable();
