@@ -1,0 +1,33 @@
+{
+	"name": "rejection",
+	"version": "1.0.0",
+	"description": "A portfolio project for professional developers to highlight skills with modern tech stacks like React, Redux, Serverless, etc. [EricElliottJS.com](https://ericelliottjs.com).",
+	"main": "index.js",
+	"author": "Tri Che",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/TeraMind244/rejection.git"
+	},
+	"license": "MIT",
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start"
+	},
+	"dependencies": {
+		"next": "10.0.5",
+		"react": "17.0.1",
+		"react-dom": "17.0.1",
+		"react-redux": "7.2.2",
+		"redux": "4.0.5",
+		"reselect": "4.0.0",
+		"typescript-fsa": "3.0.0"
+	},
+	"devDependencies": {
+		"@types/node": "14.14.20",
+		"@types/react": "17.0.0",
+		"@types/react-dom": "17.0.0",
+		"@types/react-redux": "7.1.15",
+		"typescript": "4.0.3"
+	}
+}
