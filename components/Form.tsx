@@ -1,8 +1,9 @@
 import { ChangeEvent, useState } from "react";
 import { connect, MapDispatchToProps } from "react-redux";
 import { RejectionActions } from "../store/RejectionActions";
-import { IQuestion, QuestionStatus } from "../types/Rejection";
+import { IQuestion, QuestionStatus, Variant } from "../types/Rejection";
 import { generateRandomId } from "../utils";
+import Button from "./Button";
 
 interface IDispatchProps {
 	askQuestion: (question: IQuestion) => void;
@@ -38,43 +39,51 @@ const Form: React.FC<IProps> = ({ askQuestion }) => {
 	return (
 		<div className="form">
 			<div className="row">
-				<label htmlFor="askee">Name</label>
 				<input
-					id="askee"
 					placeholder="Askee"
 					value={askee}
 					onChange={handleAskeeChange}
 				/>
 			</div>
 			<div className="row">
-				<label htmlFor="question">Question</label>
 				<input
-					id="question"
 					placeholder="Question"
 					value={question}
 					onChange={handleQuestionChange}
 				/>
 			</div>
 			<div className="row">
-				<button
-					className="button button-handler"
+				<Button
+					variant={Variant.PRIMARY}
 					onClick={() => addQuestion(QuestionStatus.ACCEPTED)}
 				>
-					Accepted
-				</button>
-				<button
-					className="button button-handler"
+					{QuestionStatus.ACCEPTED}
+				</Button>
+				<Button
+					variant={Variant.DANGER}
 					onClick={() => addQuestion(QuestionStatus.REJECTED)}
 				>
-					Rejected
-				</button>
-				<button
-					className="button button-handler"
+					{QuestionStatus.REJECTED}
+				</Button>
+				<Button
+					variant={Variant.NORMAL}
 					onClick={() => addQuestion(QuestionStatus.UNANSWERED)}
 				>
-					Unanswered
-				</button>
+					{QuestionStatus.UNANSWERED}
+				</Button>
 			</div>
+
+			<style jsx>{`
+				.row {
+					display: inline-flex;
+					flex-direction: row;
+					justify-content: space-between;
+					width: 100%;
+				}
+				input {
+					width: 100%;
+				}
+			`}</style>
 		</div>
 	);
 };

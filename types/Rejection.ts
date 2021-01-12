@@ -11,3 +11,9 @@ export interface IQuestion {
 	askee: string;
 	status: QuestionStatus;
 }
+
+export enum Variant {
+	PRIMARY = "primary",
+	DANGER = "danger",
+	NORMAL = "normal",
+}

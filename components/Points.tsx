@@ -9,10 +9,23 @@ interface IOwnProps {
 type IProps = IOwnProps;
 
 const Points: React.FC<IProps> = ({ points }) => {
-	return <h2>{`Point${points !== 1 ? "s" : ""}: ${points}`}</h2>;
+	return (
+		<h2>
+			{`Point${points !== 1 ? "s" : ""}: `}
+			<span>{points}</span>
+
+			<style jsx>{`
+				h2 {
+					color: #009a00;
+				}
+			`}</style>
+		</h2>
+	);
 };
 
-const mapStateToProps: MapStateToProps<IOwnProps, {}, IStateProps> = (state) => {
+const mapStateToProps: MapStateToProps<IOwnProps, {}, IStateProps> = (
+	state
+) => {
 	return {
 		points: RejectionSelectors.points(state),
 	};
